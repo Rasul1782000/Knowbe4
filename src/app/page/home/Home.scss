@@ -1,0 +1,110 @@
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+
+  .bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+    z-index: 1;
+  }
+
+  display: flex;
+
+  /* Navbar on left */
+  .navbar-wrapper {
+    position: relative;
+    z-index: 3;
+    width: 250px;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    app-navbar {
+      flex: 1;
+      display: block;
+    }
+  }
+
+  /* Main content area */
+  .main-content {
+    flex: 1;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .svg-container {
+      margin-bottom: 2rem;
+    }
+
+    .components-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+
+      app-flip-switch {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+
+  /* Calendar fixed top-right */
+  .calendar-wrapper {
+    position: relative;
+    top: 2rem;
+    right: 2rem;
+    z-index: 3;
+
+    app-calendar {
+      width: 300px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    flex-direction: column;
+
+    .navbar-wrapper {
+      width: 100%;
+      height: auto;
+    }
+
+    .calendar-wrapper {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-bottom: 2rem;
+    }
+
+    .main-content {
+      padding: 1rem;
+    }
+  }
+}

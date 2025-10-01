@@ -1,0 +1,85 @@
+/* Ensure the parent container supports the background image */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Styling for the background image */
+.bg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Container for centering content */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* Container for centering the SVG */
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 220px;
+}
+
+/* Bounce animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(36px); }
+  50% { transform: translateY(46px); }
+}
+
+@keyframes bounce2 {
+  0%, 100% { transform: translateY(46px); }
+  50% { transform: translateY(56px); }
+}
+
+/* Particle animation */
+@keyframes particles {
+  0%, 100% { transform: translateY(16px); }
+  50% { transform: translateY(6px); }
+}
+
+/* Gradient animation */
+@keyframes umbral {
+  0% { stop-color: #d3a5102e; }
+  50% { stop-color: rgba(211, 165, 16, 0.519); }
+  100% { stop-color: #d3a5102e; }
+}
+
+#particles {
+  animation: particles 4s ease-in-out infinite;
+}
+
+#animatedStop {
+  animation: umbral 4s infinite;
+}
+
+#bounce {
+  animation: bounce 4s ease-in-out infinite;
+}
+
+#bounce2 {
+  animation: bounce2 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}

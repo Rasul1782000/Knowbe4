@@ -1,0 +1,60 @@
+<p-drawer #drawerRef [(visible)]="visible" [style]="{'width':'300px'}">
+    <ng-template #headless>
+        <div class="drawer-container flex flex-col h-full">
+
+            <!-- Close button -->
+            <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true"
+                styleClass="h-8 w-8 mb-2"></p-button>
+
+            <!-- Logo -->
+            <img src="https://static.vecteezy.com/system/resources/previews/019/637/554/original/letter-crm-professional-logo-design-concept-elegant-template-vector.jpg"
+                class="w-full p-2 rounded" />
+
+            <!-- Menu Sections -->
+            <div class="drawer-menu overflow-y-auto flex-1">
+                <ul *ngFor="let section of menuSections" class="menu-section">
+                    <li>
+                        <!-- Section Header -->
+                        <div class="menu-header flex items-center justify-between cursor-pointer"
+                            (click)="toggleSection(section)">
+                            <span>{{ section.title }}</span>
+                            <i class="pi" [ngClass]="section.expanded ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
+                        </div>
+
+                        <!-- Section Items -->
+                        <ul class="menu-items" *ngIf="section.expanded">
+                            <li *ngFor="let item of section.items">
+                                <a (click)="toggleItem(item)">
+                                    <i [class]="item.icon + ' mr-2'"></i>
+                                    {{ item.label }}
+                                    <span *ngIf="item.badge" class="badge">{{ item.badge }}</span>
+                                    <i *ngIf="item.subItems" class="pi ml-auto"
+                                        [ngClass]="item.expanded ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                <ul *ngIf="item.subItems && item.expanded" class="submenu pl-6">
+                                    <li *ngFor="let sub of item.subItems">
+                                        <a>
+                                            <i [class]="sub.icon + ' mr-2'"></i>
+                                            {{ sub.label }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div class="drawer-footer mt-auto px-4 py-3 flex items-center gap-3 border-t border-surface-200">
+                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+                <span class="font-bold">Amy Elsner</span>
+            </div>
+        </div>
+    </ng-template>
+</p-drawer>
+
+<!-- Open Button -->
+<p-button (click)="visible = true" icon="pi pi-bars" class="menu-toggle" />
