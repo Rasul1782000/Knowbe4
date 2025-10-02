@@ -4,6 +4,8 @@
   height: 100vh;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: row;
 
   .bg-image {
     position: absolute;
@@ -12,13 +14,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.65);
+    filter: brightness(0.5);
+    /* Adjusted for better readability */
     z-index: 1;
   }
 
-  display: flex;
-
-  /* Navbar on left */
+  /* Sidebar / Navbar */
   .navbar-wrapper {
     position: relative;
     z-index: 3;
@@ -31,37 +32,61 @@
     app-navbar {
       flex: 1;
       display: block;
+      color: #fff;
+      /* Ensure text is visible */
     }
   }
 
-  /* Main content area */
+  /* Main content */
   .main-content {
     flex: 1;
     position: relative;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    /* Changed to flex-start to push content left */
+    text-align: left;
+    /* Align text to the left */
     padding: 2rem;
     color: #fff;
-    text-align: center;
+    justify-content: flex-start;
+    overflow-y: auto;
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 2rem;
-      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.6);
+    .search-wrapper {
+      width: 50%;
+      /* Centered and narrower like in the image */
+      max-width: 600px;
+      margin: 2rem 0 2rem 0;
+      /* Remove auto margins to allow left alignment */
+      position: relative;
+      z-index: 4;
+
+      app-searchbar {
+        width: 100%;
+        display: block;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
     }
 
     .svg-container {
+      width: 100%;
+      max-width: 600px;
       margin-bottom: 2rem;
+      min-height: 200px;
     }
 
     .components-wrapper {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      /* Align components to the left */
       gap: 1.5rem;
+      width: 100%;
+      max-width: 600px;
 
       app-flip-switch {
         background: rgba(255, 255, 255, 0.9);
@@ -72,39 +97,105 @@
     }
   }
 
-  /* Calendar fixed top-right */
-  .calendar-wrapper {
-    position: relative;
-    top: 2rem;
+  /* Bottom-right container for chart and calendar */
+  .bottom-right-container {
+    position: absolute;
+    bottom: 2rem;
     right: 2rem;
     z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 
-    app-calendar {
-      width: 300px;
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    .chart-wrapper {
+      display: block;
+      background: rgba(255, 255, 255, 0.9);
+      box-sizing: border-box;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    app-chart {
+      width: 100%;
+      display: block;
+    }
+
+    .calendar-wrapper {
+      display: block;
+      max-width: 350px;
+      /* Consistent with chart, adjusted from 350px */
+      background: rgba(255, 255, 255, 0.9);
+      padding: 1rem;
+      height: 350px;
+      width: 320px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+      app-calendar {
+        width: 100%;
+        display: block;
+      }
     }
   }
 
   /* Responsive adjustments */
   @media (max-width: 1024px) {
+    .navbar-wrapper {
+      width: 200px;
+    }
+
+    .main-content {
+      padding: 1.5rem;
+
+      .search-wrapper {
+        width: 70%;
+        margin: 1.5rem 0;
+      }
+    }
+
+    .bottom-right-container {
+      bottom: 1.5rem;
+      right: 1.5rem;
+
+      .chart-wrapper,
+      .calendar-wrapper {
+        max-width: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
     flex-direction: column;
 
     .navbar-wrapper {
       width: 100%;
       height: auto;
-    }
-
-    .calendar-wrapper {
-      position: relative;
-      top: auto;
-      right: auto;
-      margin-bottom: 2rem;
+      padding: 0.5rem;
     }
 
     .main-content {
       padding: 1rem;
+      justify-content: flex-start;
+
+      .search-wrapper {
+        width: 90%;
+        margin: 1rem 0;
+      }
+    }
+
+    .bottom-right-container {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin: 1rem auto;
+      width: 90%;
+      max-width: 300px;
+      align-items: center;
+
+      .chart-wrapper,
+      .calendar-wrapper {
+        max-width: 100%;
+      }
     }
   }
 }

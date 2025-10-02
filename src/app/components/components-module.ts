@@ -18,20 +18,45 @@ import { SplitButton } from 'primeng/splitbutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconField } from 'primeng/iconfield';
 import { InputIcon } from 'primeng/inputicon';
+import { VerticalchartsComponent } from './verticalcharts/verticalcharts';
+import { ChartModule } from 'primeng/chart';
+import { DockAdvancedDemo } from './dock/dock-component';
+import { TerminalModule } from 'primeng/terminal';
+import { DockModule } from 'primeng/dock';
+import { MenubarModule } from 'primeng/menubar';
+import { ToastModule } from 'primeng/toast';
+import { DialogModule } from 'primeng/dialog';
+import { TreeModule } from 'primeng/tree';
+import { GalleriaModule } from 'primeng/galleria';
+import { TooltipModule } from 'primeng/tooltip';
 
 @NgModule({
-  declarations: [FlipSwitchComponent, CalendarComponent, NavbarComponent, SearchbarComponent],
+  declarations:
+    [FlipSwitchComponent,
+      CalendarComponent,
+      NavbarComponent,
+      SearchbarComponent,
+      VerticalchartsComponent,
+      DockAdvancedDemo,],
 
   imports:
-
     [CommonModule,
       FormsModule,
       MatCardModule,
       MatDatepickerModule,
       MatNativeDateModule,
       DrawerModule,
+      TerminalModule,
+      DockModule,
+      MenubarModule,
+      ToastModule,
+      DialogModule,
+      TreeModule,
+      GalleriaModule,
+      TooltipModule,
       ButtonModule,
       Ripple,
+      ChartModule,
       AvatarModule,
       StyleClass,
       Toolbar,
@@ -39,8 +64,13 @@ import { InputIcon } from 'primeng/inputicon';
       SplitButton,
       InputTextModule,
       IconField,
-      InputIcon],
+      InputIcon
+    ],
 
-  exports: [FlipSwitchComponent, CalendarComponent, NavbarComponent, SearchbarComponent],
+  exports:
+    [FlipSwitchComponent,
+      CalendarComponent,
+      NavbarComponent,
+      SearchbarComponent, VerticalchartsComponent, DockAdvancedDemo],
 })
 export class ComponentsModule { }

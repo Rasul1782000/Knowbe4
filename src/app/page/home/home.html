@@ -2,25 +2,28 @@
   <!-- Background Image -->
   <img src="https://images8.alphacoders.com/721/721311.jpg" alt="Mountain" class="bg-image" />
 
-  <!-- Navbar -->
+  <!-- Navbar / Sidebar -->
   <div class="navbar-wrapper">
     <app-navbar></app-navbar>
   </div>
 
-  <!-- Main content -->
+  <!-- Main content area -->
   <div class="main-content">
-    <h1>Welcome Home</h1>
-
-    <div class="svg-container">
+    <div class="search-wrapper">
+      <app-searchbar></app-searchbar>
     </div>
-
-    <div class="components-wrapper">
-      <!-- <app-flip-switch></app-flip-switch> -->
-    </div>
+    <div class="svg-container"></div>
+    <!-- Other components -->
+    <div class="components-wrapper"></div>
   </div>
 
-  <!-- Calendar -->
-  <div class="calendar-wrapper">
-    <app-calendar></app-calendar>
+  <!-- Bottom-right container for chart and calendar -->
+  <div class="bottom-right-container">
+    <div class="chart-wrapper">
+      <app-Verticalcharts></app-Verticalcharts>
+    </div>
+    <div class="calendar-wrapper">
+      <app-calendar></app-calendar>
+    </div>
   </div>
 </div>

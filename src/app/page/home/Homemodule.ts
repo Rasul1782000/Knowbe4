@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Home } from './Home';
-import { ComponentsModule } from '../../components/components-module'; // ✅ import the module
+import { ComponentsModule } from '../../components/components-module';
 
 @NgModule({
   declarations: [Home],
