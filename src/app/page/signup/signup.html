@@ -1,1 +1,81 @@
-<p>signup works!</p>
+<div id="form-ui">
+  <form id="form" (ngSubmit)="Submitresponse()">
+    <div id="form-body">
+
+      <!-- Welcome Section -->
+      <div id="welcome-lines">
+        <div id="welcome-line-1">Know be-4</div>
+        <div id="welcome-line-2">Welcome!</div>
+      </div>
+
+      <!-- Input Fields -->
+      <div id="input-area">
+        <div class="form-inp">
+          <input
+            placeholder="Email Address"
+            type="email"
+            pInputText
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="form-inp">
+          <input
+            placeholder="Password"
+            type="password"
+            pInputText
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </div>
+
+        <div class="form-inp">
+          <input
+            placeholder="Confirm Password"
+            type="password"
+            pInputText
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+
+        <div class="form-inp">
+          <input
+            placeholder="Username"
+            type="text"
+            pInputText
+            [(ngModel)]="username"
+            name="username"
+            required
+          />
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div id="submit-button-cvr">
+        <button
+          id="submit-button"
+          type="submit"
+          pButton
+        >Sign Up</button>
+      </div>
+
+      <!-- Links -->
+      <div id="forgot-pass">
+        <a routerLink="/forgot-password">Forgot password?</a>
+      </div>
+
+      <div id="forgot-pass" style="margin-top: 5px;">
+        <a routerLink="/login">Already have an account? Login</a>
+      </div>
+
+      <!-- Decorative Bar -->
+      <div id="bar"></div>
+
+    </div>
+  </form>
+</div>

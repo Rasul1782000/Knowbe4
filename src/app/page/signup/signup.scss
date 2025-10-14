@@ -1,0 +1,151 @@
+
+    /* Body / Root Container */
+    body {
+      background-color: #161616;
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    /* Form Container */
+    #form-ui {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #161616;
+    }
+
+    /* Form Card */
+    #form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 320px;
+      padding: 30px;
+      background-color: #1e1e1e;
+      box-shadow: 0 10px 30px rgba(0, 255, 127, 0.3);
+      border: 1px solid #2b9962;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Form Body */
+    #form-body {
+      width: 100%;
+      max-width: 260px;
+      text-align: center;
+    }
+
+    /* Welcome Text */
+    #welcome-lines {
+      margin-bottom: 30px;
+    }
+
+    #welcome-line-1 {
+      color: #00FF7F;
+      font-weight: 700;
+      font-size: 36px;
+    }
+
+    #welcome-line-2 {
+      color: #ccc;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Input Area */
+    #input-area {
+      margin-bottom: 20px;
+    }
+
+    .form-inp {
+      margin-bottom: 12px;
+    }
+
+    .form-inp input {
+      width: 100%;
+      padding: 12px 15px;
+      background: transparent;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #00FF7F;
+      transition: border-color 0.3s;
+    }
+
+    .form-inp input:focus {
+      outline: none;
+      border-color: #00FF7F;
+    }
+
+    /* Submit Button */
+    #submit-button-cvr {
+      margin-top: 20px;
+    }
+
+    #submit-button {
+      width: 100%;
+      padding: 12px;
+      color: #00FF7F;
+      background-color: transparent;
+      font-weight: 600;
+      font-size: 14px;
+      border: 1px solid #00FF7F;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #submit-button:hover {
+      background-color: #00FF7F;
+      color: #1e1e1e;
+    }
+
+    /* Links */
+    .form-links {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .form-links a {
+      color: #868686;
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .form-links a:hover {
+      color: #00FF7F;
+    }
+
+    /* Decorative Bar */
+    #bar {
+      position: absolute;
+      left: 50%;
+      bottom: -20px;
+      width: 30px;
+      height: 6px;
+      margin-left: -15px;
+      background-color: #00FF7F;
+      border-radius: 10px;
+    }
+
+    #bar:before,
+    #bar:after {
+      content: "";
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #ccc;
+      border-radius: 50%;
+    }
+
+    #bar:before {
+      right: -18px;
+    }
+
+    #bar:after {
+      right: -36px;
+    }

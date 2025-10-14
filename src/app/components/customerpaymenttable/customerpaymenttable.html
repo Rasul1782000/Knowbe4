@@ -1,0 +1,76 @@
+<div class="card">
+  <p-table
+    #dt1
+    [value]="customers"
+    dataKey="id"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [loading]="loading"
+    [paginator]="true"
+    [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+    showGridlines
+    class="dark-table compact-table"
+  >
+    <ng-template #caption>
+      <div class="flex items-center gap-2">
+        <p-button label="Clear" [outlined]="true" icon="pi pi-filter-slash" (click)="clear(dt1)" class="p-button-sm" />
+        <p-iconfield iconPosition="left" class="ml-auto">
+          <p-inputicon>
+            <i class="pi pi-search"></i>
+          </p-inputicon>
+          <input
+            pInputText
+            type="text"
+            (input)="dt1.filterGlobal($event.target.value, 'contains')"
+            placeholder="Search keyword"
+            class="p-inputtext-sm"
+          />
+        </p-iconfield>
+      </div>
+    </ng-template>
+
+    <!-- Table header -->
+    <ng-template #header>
+      <tr>
+        <th style="min-width:10rem">Name<p-columnFilter type="text" field="name" display="menu" /></th>
+        <th style="min-width:10rem">Country<p-columnFilter type="text" field="country.name" display="menu" /></th>
+        <th style="min-width:10rem">Agent<p-columnFilter field="representative" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false"></p-columnFilter></th>
+        <th style="min-width:8rem">Date<p-columnFilter type="date" field="date" display="menu"></p-columnFilter></th>
+        <th style="min-width:8rem">Balance<p-columnFilter type="numeric" field="balance" display="menu" currency="USD" /></th>
+        <th style="min-width:8rem">Status<p-columnFilter field="status" matchMode="equals" display="menu"></p-columnFilter></th>
+        <th style="min-width:8rem">Activity<p-columnFilter field="activity" matchMode="between" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false"></p-columnFilter></th>
+        <th style="width: 2rem">Verified<p-columnFilter type="boolean" field="verified" display="menu" /></th>
+      </tr>
+    </ng-template>
+
+    <!-- Table body -->
+    <ng-template #body let-customer>
+      <tr>
+        <td>{{ customer.name }}</td>
+        <td>
+          <div class="flex items-center gap-1">
+            <img src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png" [class]="'flag flag-' + customer.country.code" style="width: 16px" />
+            <span>{{ customer.country.name }}</span>
+          </div>
+        </td>
+        <td>
+          <div class="flex items-center gap-1">
+            <img [alt]="customer.representative.name" src="https://primefaces.org/cdn/primeng/images/demo/avatar/{{ customer.representative.image }}" width="24" />
+            <span>{{ customer.representative.name }}</span>
+          </div>
+        </td>
+        <td>{{ customer.date | date: 'MM/dd/yyyy' }}</td>
+        <td>{{ customer.balance | currency: 'USD' : 'symbol' }}</td>
+        <td><p-tag [value]="customer.status" [severity]="getSeverity(customer.status)" /></td>
+        <td><p-progressbar [value]="customer.activity" [showValue]="false" class="dark-progress" /></td>
+        <td class="text-center">
+          <i class="pi" [ngClass]="{'text-green-500 pi-check-circle': customer.verified, 'text-red-500 pi-times-circle': !customer.verified}"></i>
+        </td>
+      </tr>
+    </ng-template>
+
+    <ng-template #emptymessage>
+      <tr><td colspan="8">No customers found.</td></tr>
+    </ng-template>
+  </p-table>
+</div>

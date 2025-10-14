@@ -1,0 +1,100 @@
+.card {
+  background: #f5f7fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 1rem auto;
+  font-family: "Inter", sans-serif;
+}
+
+.payment-method-header {
+  color: #6b7280;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.p-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.p-card .text-surface-500 {
+  color: #6b7280;
+}
+
+.p-card .font-bold {
+  color: #1f2937;
+}
+
+.p-card .text-red-500 {
+  color: #ef4444;
+}
+
+.p-card .text-green-500 {
+  color: #10b981;
+}
+
+.p-card span.w-8.h-8 {
+  min-width: 2rem;
+  min-height: 2rem;
+  font-size: 0.9rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
+.search-container {
+  margin-top: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .flex-wrap {
+    flex-direction: column;
+  }
+}

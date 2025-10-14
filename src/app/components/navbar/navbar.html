@@ -1,7 +1,6 @@
-<p-drawer #drawerRef [(visible)]="visible" [style]="{'width':'300px'}">
+<p-drawer #drawerRef [(visible)]="visible" [style]="{'width':'200px'}">
     <ng-template #headless>
         <div class="drawer-container flex flex-col h-full">
-
             <!-- Close button -->
             <p-button type="button" (click)="closeCallback($event)" icon="pi pi-times" rounded="true" outlined="true"
                 styleClass="h-8 w-8 mb-2"></p-button>
@@ -24,7 +23,7 @@
                         <!-- Section Items -->
                         <ul class="menu-items" *ngIf="section.expanded">
                             <li *ngFor="let item of section.items">
-                                <a (click)="toggleItem(item)">
+                                <a [routerLink]="item.route" (click)="toggleItem(item)">
                                     <i [class]="item.icon + ' mr-2'"></i>
                                     {{ item.label }}
                                     <span *ngIf="item.badge" class="badge">{{ item.badge }}</span>
@@ -35,7 +34,7 @@
                                 <!-- Submenu -->
                                 <ul *ngIf="item.subItems && item.expanded" class="submenu pl-6">
                                     <li *ngFor="let sub of item.subItems">
-                                        <a>
+                                        <a [routerLink]="sub.route">
                                             <i [class]="sub.icon + ' mr-2'"></i>
                                             {{ sub.label }}
                                         </a>

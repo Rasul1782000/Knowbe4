@@ -1,0 +1,135 @@
+/* ---------------- Variables ---------------- */
+$card-bg: var(--surface-card);
+$card-radius: 16px;
+$card-padding: 1rem;
+$dark-bg: #121212;
+$dark-color: #efefef;
+$hover-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+$tag-font-size: 0.75rem;
+$tag-padding: 0.3rem 0.6rem;
+$image-size: 160px;
+$action-btn-height: 2rem;
+
+/* ---------------- Dark Theme ---------------- */
+.dark-theme {
+  background-color: $dark-bg;
+  color: $dark-color;
+  border-radius: $card-radius;
+  padding: $card-padding;
+}
+
+/* Dropdown customization */
+.sort-dropdown {
+  .p-dropdown-label {
+    color: $dark-color !important;
+  }
+  background: #fcfbfb !important;
+  border: 1px solid #444 !important;
+  color: $dark-color !important;
+}
+
+/* ---------------- Employee Card ---------------- */
+.employee-card {
+  background: $card-bg;
+  border-radius: $card-radius;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  padding: $card-padding;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+    transform: translateY(-4px);
+  }
+}
+
+/* Employee Image */
+.employee-image {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f0f0f0, #d9d9d9);
+
+  .employee-img {
+    width: $image-size;
+    height: $image-size;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .employee-img {
+    transform: scale(1.05);
+  }
+
+  .employee-tag {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: $tag-font-size !important;
+    padding: $tag-padding !important;
+    border-radius: 12px;
+  }
+}
+
+/* Employee Details */
+.employee-details {
+  flex: 1;
+  display: block;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .info {
+    .position {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+    .name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+    .date {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  }
+
+  .contact {
+    .email {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .phone {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+
+    p-button {
+      flex: 1;
+      height: $action-btn-height;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .employee-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .employee-details {
+    align-items: center;
+  }
+}

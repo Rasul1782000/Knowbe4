@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { SelectItem } from 'primeng/api'; // 
 
 export interface Photo {
   itemImageSrc: string;

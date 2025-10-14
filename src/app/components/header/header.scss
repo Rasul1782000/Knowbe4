@@ -1,0 +1,99 @@
+.card {
+  background: var(--surface-card);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  ::ng-deep {
+    .p-toolbar {
+      background: var(--surface-ground);
+      border-radius: 2rem;
+      border: 1px solid var(--surface-border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-height: 4rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--p-primary-color);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      // /* Left Side: Share button */
+      // .p-toolbar-group-start {
+      //   display: flex;
+      //   align-items: left;
+      //   gap: 1rem;
+
+      //   .p-button {
+      //     background-color: var(--p-primary-color);
+      //     color: var(--p-primary-contrast-color);
+      //     border: none;
+      //     border-radius: 1rem;
+      //     font-weight: 600;
+      //     padding: 0.5rem 1.25rem;
+      //     font-size: 0.9rem;
+      //     transition: all 0.3s ease;
+
+      //     &:hover {
+      //       background-color: var(--p-primary-500);
+      //       transform: translateY(-2px);
+      //     }
+      //   }
+      // }
+
+      /* Center (optional) */
+      .p-toolbar-group-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Right Side: Avatar only */
+      .p-toolbar-group-end {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .p-avatar {
+          border: 2px solid var(--surface-border);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease;
+          width: 2.5rem !important;
+          height: 2.5rem !important;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .card ::ng-deep .p-toolbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+
+    .p-toolbar-group-start,
+    .p-toolbar-group-center,
+    .p-toolbar-group-end {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}

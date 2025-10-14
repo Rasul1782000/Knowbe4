@@ -1,4 +1,4 @@
-// src/app/components/calendar/calendar.component.ts
+
 import { Component, signal } from '@angular/core';
 
 @Component({

@@ -1,17 +1,8 @@
-// 1️⃣ Angular Material theming must come first
 @use '@angular/material' as mat;
+// @use '@nebular/theme/styles/theming' as *;
+// @use '@nebular/theme/styles/themes/dark' as dark;
 
-// 2️⃣ Then other imports
-
-// 3️⃣ Define theme for the application
-html {
-  @include mat.theme((color: (primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette ),
-      typography: Roboto,
-      density: 0));
-}
-
-// 4️⃣ Global styles
+/* Global styles */
 html,
 body {
   height: 100%;
@@ -22,3 +13,5 @@ body {
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
 }
+// /* Importing Bootstrap SCSS file. */
+// @import 'bootstrap/scss/bootstrap';

@@ -1,0 +1,58 @@
+:host ::ng-deep {
+  .dark-table {
+    background-color: #1a1a1a;
+    color: #fff;
+
+    .p-datatable-thead > tr > th {
+      background-color: #111;
+      color: #fff;
+      border-bottom: 1px solid #333;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .p-datatable-tbody > tr > td {
+      border-bottom: 1px solid #333;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.75rem;
+    }
+
+    .p-datatable-tbody > tr:hover {
+      background-color: #222 !important;
+    }
+
+    .p-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.3rem;
+    }
+
+    .p-button.p-button-sm {
+      padding: 0.2rem 0.4rem;
+      font-size: 0.75rem;
+      border-color: #555;
+      color: #f0f0f0;
+    }
+
+    .p-inputtext-sm {
+      background-color: #222;
+      border: 1px solid #555;
+      color: #fff;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .dark-progress {
+      height: 0.4rem;
+      background-color: #333;
+    }
+
+    .dark-progress .p-progressbar-value {
+      background-color: #607d8b;
+    }
+
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

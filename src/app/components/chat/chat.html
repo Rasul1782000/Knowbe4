@@ -1,0 +1,31 @@
+<div class="max-w-3xl mx-auto p-4 h-screen flex flex-col bg-base-200">
+    <h1 class="text-2xl font-bold mb-4">Kreya Studio Chat</h1>
+
+    <!-- Chat messages container -->
+    <div #scrollContainer class="flex-1 overflow-y-auto mb-4 space-y-4">
+        <div *ngFor="let msg of messages"
+            [ngClass]="{'chat chat-start': msg.sender === 'receiver', 'chat chat-end': msg.sender === 'sender'}">
+            <div class="chat-avatar avatar">
+                <div class="w-10 rounded-full">
+                    <img [src]="msg.avatar" alt="{{msg.name}} avatar" />
+                </div>
+            </div>
+            <div class="chat-header text-base-content">
+                {{ msg.name }}
+                <time class="text-base-content/50 ml-2">{{ msg.time }}</time>
+            </div>
+            <div class="chat-bubble">{{ msg.text }}</div>
+            <div class="chat-footer text-base-content/50">
+                {{ msg.status }}
+                <span *ngIf="msg.statusIcon" class="text-success align-bottom">✓</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="flex gap-2">
+        <input [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" type="text" placeholder="Type a message..."
+            class="flex-1 input input-bordered" />
+        <button (click)="sendMessage()" class="btn btn-primary">Send</button>
+    </div>
+</div>

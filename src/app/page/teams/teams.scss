@@ -1,0 +1,152 @@
+/* 🌌 Teams Container */
+.teams-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* 🔹 Background Overlay */
+.bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.25) blur(4px);
+  z-index: 1;
+}
+
+/* 🔹 Sidebar */
+.navbar-wrapper {
+  width: clamp(140px, 13%, 180px);
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(8px);
+  z-index: 3;
+  gap: 1rem;
+}
+
+/* 🔹 Main Content */
+.main-content {
+  flex: 1;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 0.5rem;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  overflow-y: auto;
+}
+
+/* 🔹 Custom Scrollbar */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background: rgba(88, 166, 255, 0.5);
+  border-radius: 10px;
+}
+
+/* 🔹 Header Section */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.header-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0;
+}
+
+/* 🔹 Teams Leaderboard (Chart + Accordion side-by-side) */
+.teams-leaderboard-section {
+  display: flex;
+  align-items: flex-start; /* Align top edges */
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Organizational Chart Container */
+.chart-wrapper {
+  flex: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 70%;
+}
+
+.chart-wrapper app-organizationalchart {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔹 Accordion Wrapper */
+.accordion-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 30%;
+}
+
+/* 🔹 Responsive (Tablet) */
+@media (max-width: 1024px) {
+  .teams-leaderboard-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .chart-wrapper,
+  .accordion-wrapper {
+    max-width: 100%;
+  }
+
+  .chart-wrapper app-organizationalchart {
+    width: 95%;
+  }
+}
+
+/* 🔹 Responsive (Mobile) */
+@media (max-width: 768px) {
+  .navbar-wrapper {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .header-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .teams-leaderboard-section {
+    padding: 1rem;
+  }
+}

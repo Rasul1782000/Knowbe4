@@ -5,8 +5,8 @@ import { DesignerService } from '../../service/services/designer.service';
 
 @Component({
   selector: 'app-Verticalcharts',
-  templateUrl: './Verticalcharts.html',
-  styleUrl: './Verticalcharts.scss',
+  templateUrl: './verticalcharts.html',
+  styleUrls: ['./verticalcharts.scss'],  // Fixed typo
   standalone: false,
 })
 export class VerticalchartsComponent implements OnInit {
@@ -15,7 +15,7 @@ export class VerticalchartsComponent implements OnInit {
 
   platformId = inject(PLATFORM_ID);
   configService = inject(AppConfigService);
-  designerService: DesignerService = inject(DesignerService) as DesignerService;
+  designerService = inject(DesignerService);
 
   constructor(private cd: ChangeDetectorRef) { }
 
@@ -34,63 +34,64 @@ export class VerticalchartsComponent implements OnInit {
   initChart() {
     if (isPlatformBrowser(this.platformId)) {
       const documentStyle = getComputedStyle(document.documentElement);
-      const textColor = documentStyle.getPropertyValue('--p-text-color');
-      const textColorSecondary = documentStyle.getPropertyValue('--p-text-muted-color');
-      const surfaceBorder = documentStyle.getPropertyValue('--p-content-border-color');
 
       this.data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [
           {
-            label: 'My First dataset',
-            backgroundColor: '#00C4CC', // Changed to cyan from the image
-            borderColor: '#00C4CC',
-            textColor: 'black',
-            data: [65, 59, 80, 81, 56, 55, 40]
+            label: 'First Dataset',
+            data: [65, 59, 80, 81, 56, 55, 40],
+            backgroundColor: '#0022cc', // Use backgroundColor for bars
+            borderColor: '#f3f8f1ff',     // Optional: bar border
+            borderWidth: 1
           },
           {
-            label: 'My Second dataset',
-            backgroundColor: '#808080', // Changed to gray from the image
-            borderColor: '#808080',
-            data: [28, 48, 40, 19, 86, 27, 90]
+            label: 'Second Dataset',
+            data: [28, 48, 40, 19, 86, 27, 90],
+            backgroundColor: '#81f909ff',
+            borderColor: '#fbf8f0ff',
+            borderWidth: 1
           }
         ]
       };
 
       this.options = {
         maintainAspectRatio: false,
-        aspectRatio: 0.8,
+        aspectRatio: 0.6,
         plugins: {
           legend: {
             labels: {
-              color: textColor
+              color: '#f2eff0ff'
             }
           }
         },
         scales: {
           x: {
             ticks: {
-              color: textColorSecondary,
-              font: {
-                weight: 500
-              }
+              color: '#f3eff1ff'
             },
             grid: {
-              color: surfaceBorder,
+              color: '#0db8e8ff',
               drawBorder: false
             }
           },
           y: {
             ticks: {
-              color: textColorSecondary
+              color: '#f0eef0ff',
+              beginAtZero: true
             },
             grid: {
-              color: surfaceBorder,
+              color: '#0e0e0fff',
               drawBorder: false
             }
           }
+        },
+        layout: {
+          padding: 0,
+          backgroundColor: '#ffffff'
         }
       };
+
       this.cd.markForCheck();
     }
   }
