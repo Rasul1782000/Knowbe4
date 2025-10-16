@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Settings } from './settings';
 import { ComponentsModule } from '../../components/components-module';
+import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
+
+
+
+
 
 
 @NgModule({
@@ -11,6 +16,6 @@ import { ComponentsModule } from '../../components/components-module';
     imports: [
         CommonModule, FormsModule, HttpClientModule, ComponentsModule
     ],
-    exports: [Settings]
+    exports: [BreadcrumbsComponent]
 })
 export class SettingsModule { }

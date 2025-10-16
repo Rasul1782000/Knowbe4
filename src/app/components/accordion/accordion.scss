@@ -1,18 +1,15 @@
-/* =========================================================
-   SBMS Accordion Section — Compact Dark Theme (50% Smaller)
-   ========================================================= */
 
 .card {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 1rem; /* reduced from 2rem */
+  padding: 2rem; /* reduced from 2rem */
   background: transparent;
   z-index: 2;
 
   p-accordion {
-    width: 60%; /* was 80% */
-    max-width: 600px; /* was 900px */
+    width: 80%; /* was 80% */
+    max-width: 400px; /* was 900px */
     background: rgba(20, 20, 20, 0.8);
     border-radius: 10px; /* was 16px */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);

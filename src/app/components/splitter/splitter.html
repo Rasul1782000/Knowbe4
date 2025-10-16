@@ -1,0 +1,41 @@
+<div class="card">
+  <p-splitter [style]="{ height: '600px' }" [panelSizes]="[20, 80]" [minSizes]="[10, 0]">
+
+    <!-- Panel 1 -->
+    <ng-template #panel>
+      <app-creditcard></app-creditcard>
+    </ng-template>
+
+    <!-- Panel 2 (nested vertical splitter) -->
+    <ng-template #panel>
+      <p-splitter layout="vertical" [panelSizes]="[50, 50]">
+
+        <!-- Panel 2 top -->
+        <ng-template #panel>
+          <ag-financial-charts></ag-financial-charts>
+        </ng-template>
+
+        <!-- Panel 2 bottom (nested splitter) -->
+        <ng-template #panel>
+          <p-splitter [panelSizes]="[20, 80]">
+
+            <!-- Panel 3 -->
+            <ng-template #panel>
+              <app-breadcrumbs></app-breadcrumbs>
+            </ng-template>
+
+            <!-- Panel 4 -->
+            <ng-template #panel>
+              <div class="col h-full flex items-center justify-center">
+                Additional Content Here
+              </div>
+            </ng-template>
+
+          </p-splitter>
+        </ng-template>
+
+      </p-splitter>
+    </ng-template>
+
+  </p-splitter>
+</div>

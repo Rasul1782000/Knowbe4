@@ -1,0 +1,45 @@
+<div class="payment-page">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <app-navbar></app-navbar>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="header-section">
+      <h2>Welcome, Rasul Ahmed Khan 😀</h2>
+      <div class="controls">
+        <app-header></app-header>
+      </div>
+    </header>
+
+    <!-- Dashboard Widgets + Leaderboard -->
+    <section class="dashboard-widgets-leaderboard">
+      <div class="dashboard-widgets">
+        <app-metergroup></app-metergroup>
+        <app-revenuegraph></app-revenuegraph>
+        <app-piechart></app-piechart>
+      </div>
+
+      <section class="leaderboard-section">
+        <h3>Leaderboard</h3>
+        <div class="leaderboard-controls">
+          <span>View All</span> | <span>Team A</span>
+        </div>
+        <div class="leaderboard-list">
+          <div class="leaderboard-item"><span>#1</span><span>Alaska Young</span><span>99%</span></div>
+          <div class="leaderboard-item"><span>#2</span><span>Alex Shotay</span><span>90%</span></div>
+          <div class="leaderboard-item"><span>#3</span><span>Mina Lee</span><span>87%</span></div>
+          <div class="leaderboard-item"><span>#4</span><span>Mesut Ozil</span><span>86%</span></div>
+          <div class="leaderboard-item"><span>#5</span><span>Kai Havertz</span><span>49%</span></div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Candidate Table Section -->
+    <section class="dashboard-table">
+      <app-customerpaymenttable></app-customerpaymenttable>
+    </section>
+  </main>
+</div>

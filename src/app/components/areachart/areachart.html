@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <title>JavaScript Example - Area - Area With Negative Values</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="/crm-app/src/app/components/areachart/areachart.scss"
+    />
+    <style>
+      body {
+        padding: 1rem;
+      }
+
+      div:has(> .ag-charts-wrapper),
+      ag-charts,
+      ag-financial-charts {
+        padding: 0 !important;
+        border: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myChart"></div>
+    <script src="https://cdn.jsdelivr.net/npm/ag-charts-enterprise@12.2.0/dist/umd/ag-charts-enterprise.js?t=1758638660285"></script>
+    <script src="/crm-app/src/app/models/charts.ts"></script>
+    <script src="/crm-app/src/app/components/areachart/areachart.ts"></script>
+  </body>
+</html>

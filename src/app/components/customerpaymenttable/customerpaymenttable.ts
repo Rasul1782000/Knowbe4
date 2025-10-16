@@ -1,94 +1,60 @@
-import { Representative } from './../../models/employee';
-import { Component,signal } from '@angular/core';
-import { Table } from 'primeng/table';
-import { CustomerService } from '../../service/services/customerservice';
-import { Humans } from '../../domain/Humans';
-import { OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { HumanService } from '../../service/humanservice';
-import { HttpClient } from '@angular/common/http';
+
+export interface Candidate {
+  id: number;
+  name: string;
+  role: string;
+  experience: string; // e.g., "3 yrs"
+}
+
+const CANDIDATE_DATA: Candidate[] = [
+  { id: 1, name: 'Alice Johnson', role: 'Frontend Developer', experience: '3 yrs' },
+  { id: 2, name: 'Bob Smith', role: 'Backend Developer', experience: '5 yrs' },
+  { id: 3, name: 'Charlie Brown', role: 'Fullstack Developer', experience: '4 yrs' },
+  { id: 4, name: 'Diana Prince', role: 'UI/UX Designer', experience: '2 yrs' },
+  { id: 5, name: 'Ethan Hunt', role: 'DevOps Engineer', experience: '6 yrs' },
+  { id: 6, name: 'Fiona Gallagher', role: 'Frontend Developer', experience: '3 yrs' },
+  { id: 7, name: 'George Martin', role: 'Backend Developer', experience: '5 yrs' },
+  { id: 8, name: 'Hannah Lee', role: 'Fullstack Developer', experience: '4 yrs' },
+  { id: 9, name: 'Ian Curtis', role: 'Mobile Developer', experience: '3 yrs' },
+  { id: 10, name: 'Julia Roberts', role: 'UI/UX Designer', experience: '2 yrs' },
+  { id: 11, name: 'Kevin Hart', role: 'Frontend Developer', experience: '3 yrs' },
+  { id: 12, name: 'Laura Croft', role: 'Backend Developer', experience: '5 yrs' },
+  { id: 13, name: 'Michael Scott', role: 'Fullstack Developer', experience: '4 yrs' },
+  { id: 14, name: 'Nancy Drew', role: 'UI/UX Designer', experience: '2 yrs' },
+  { id: 15, name: 'Oscar Wilde', role: 'DevOps Engineer', experience: '6 yrs' },
+  { id: 16, name: 'Pam Beesly', role: 'Frontend Developer', experience: '3 yrs' },
+  { id: 17, name: 'Quentin Tarantino', role: 'Backend Developer', experience: '5 yrs' },
+  { id: 18, name: 'Rachel Green', role: 'Fullstack Developer', experience: '4 yrs' },
+  { id: 19, name: 'Steve Rogers', role: 'Mobile Developer', experience: '3 yrs' },
+  { id: 20, name: 'Tony Stark', role: 'DevOps Engineer', experience: '7 yrs' },
+];
 
 @Component({
   selector: 'app-customerpaymenttable',
-  standalone: false,
   templateUrl: './customerpaymenttable.html',
-  styleUrl: './customerpaymenttable.scss',
-  providers: [CustomerService]
+  styleUrls: ['./customerpaymenttable.scss'],
+  standalone: false,
+  providers: [HumanService]
 })
+export class CustomerpaymenttableComponent implements AfterViewInit {
+  displayedColumns: string[] = ['id', 'name', 'role', 'experience'];
+  dataSource = new MatTableDataSource<Candidate>(CANDIDATE_DATA);
 
-export class Customerpaymenttable implements OnInit {
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
-    customers!:Humans [];
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
-    representatives!: Representative[];
-
-    statuses!: any[];
-
-    loading: boolean = true;
-
-    activityValues: number[] = [0, 100];
-    value= signal('');
-
-    searchValue: string | undefined;
-
-    constructor(private HumanService: HumanService) {}
-
-    ngOnInit() {
-        this.HumanService.getHumansData().forEach((Humans: Humans[]) => {
-            this.customers = Humans;
-            this.loading = false;
-
-            this.customers.forEach((customer) => (customer.date = new Date(<Date><unknown>customer.date)));
-        });
-
-        this.representatives = [
-            { name: 'Amy Elsner', image: 'amyelsner.png' },
-            { name: 'Anna Fali', image: 'annafali.png' },
-            { name: 'Asiya Javayant', image: 'asiyajavayant.png' },
-            { name: 'Bernardo Dominic', image: 'bernardodominic.png' },
-            { name: 'Elwin Sharvill', image: 'elwinsharvill.png' },
-            { name: 'Ioni Bowcher', image: 'ionibowcher.png' },
-            { name: 'Ivan Magalhaes', image: 'ivanmagalhaes.png' },
-            { name: 'Onyama Limba', image: 'onyamalimba.png' },
-            { name: 'Stephen Shaw', image: 'stephenshaw.png' },
-            { name: 'Xuxue Feng', image: 'xuxuefeng.png' }
-        ];
-
-        this.statuses = [
-            { label: 'Unqualified', value: 'unqualified' },
-            { label: 'Qualified', value: 'qualified' },
-            { label: 'New', value: 'new' },
-            { label: 'Negotiation', value: 'negotiation' },
-            { label: 'Renewal', value: 'renewal' },
-            { label: 'Proposal', value: 'proposal' }
-        ];
-    }
-
-    clear(table: Table) {
-        table.clear();
-        this.searchValue = ''
-    }
-
-getSeverity(status: string): 'danger' | 'success' | 'info' | 'warn' | null {
-    switch (status.toLowerCase()) {
-        case 'unqualified':
-            return 'danger';
-        case 'qualified':
-            return 'success';
-        case 'new':
-            return 'info';
-        case 'negotiation':
-            return 'warn';
-        case 'renewal':
-            return null;
-        default:
-            return null; // <-- ensures a value is always returned
-    }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
-
-}
-
-
-
-
-
-

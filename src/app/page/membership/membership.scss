@@ -1,0 +1,102 @@
+/* Smaller Plan Chooser */
+.plan-chooser {
+  background-color: rgba(255, 255, 255, 1);
+  max-width: 240px;          /* reduced width */
+  border-radius: 8px;
+  padding: 15px;             /* smaller padding */
+  color: #000;
+  box-shadow: 0px 50px 40px -20px rgba(0,0,0,0.3);
+}
+
+.header {
+  text-align: center;
+  margin-top: 0.5rem;        /* less top margin */
+}
+
+.plan-chooser .title {
+  font-size: 1.25rem;        /* smaller title */
+  font-weight: 700;
+  line-height: 1.2rem;
+  color: rgba(0, 0, 0, 1);
+}
+
+.plan-chooser .desc {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;        /* smaller description */
+  line-height: 1.2rem;
+  color: rgba(75, 85, 99, 1);
+}
+
+.plan-option {
+  margin-top: 0.5rem;
+  margin-bottom: 10px;       /* reduced spacing */
+}
+
+.plan-option label {
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid rgba(229, 231, 235, 1);
+  border-radius: 0.375rem;
+  background-color: rgba(249, 250, 251, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.3rem;   /* smaller padding */
+  margin: 6px 0;
+  transition: all .15s ease;
+}
+
+.plan-option label .plan-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;          /* smaller margin */
+}
+
+.plan-cost {
+  font-size: 1rem;           /* smaller cost */
+  line-height: 1.4rem;
+  font-weight: 600;
+}
+
+.plan-name {
+  font-size: 0.7rem;         /* smaller name */
+  line-height: 1rem;
+  color: rgba(75, 85, 99, 1);
+}
+
+.reduction {
+  display: inline-block;
+  border-radius: 9999px;
+  border: 1px solid rgba(22, 163, 74, 1);
+  background-color: rgba(220, 252, 231, 1);
+  padding: 0.15rem 0.3rem;   /* smaller padding */
+  font-size: 0.55rem;        /* smaller text */
+  font-weight: 600;
+  color: rgba(22, 163, 74, 1);
+}
+
+.plan-option input:checked + label {
+  border-color: rgba(37, 99, 235, 1);
+}
+
+.choose-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background-color: rgba(37, 99, 235, 1);
+  padding: 0.7rem 2rem;      /* smaller button */
+  font-size: 0.85rem;        /* smaller text */
+  font-weight: 600;
+  color: #fff;
+  transition: all .15s ease;
+}
+
+.choose-btn:hover {
+  opacity: .9;
+}
+
+.plan-option input {
+  display: none;
+}

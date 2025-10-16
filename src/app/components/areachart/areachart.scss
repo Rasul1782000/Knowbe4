@@ -1,0 +1,42 @@
+/* =========================================================
+   AG Charts - Area With Negative Values Styling
+   ========================================================= */
+
+body {
+  padding: 1rem;
+  background-color: #fff; // optional, match your page background
+  font-family: Arial, sans-serif;
+}
+
+#myChart {
+  width: 100%;
+  height: 400px; // adjust height as needed
+  display: block;
+  margin: 0 auto;
+}
+
+/* Remove default padding and borders for chart wrappers */
+div:has(> .ag-charts-wrapper),
+ag-charts,
+ag-financial-charts {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Optional: Make charts responsive */
+.ag-charts-wrapper {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Optional: Style axes, grid, or series if needed */
+.ag-charts-axis-label,
+.ag-charts-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ag-charts-series-marker {
+  border-width: 1px;
+  stroke-width: 1px;
+}

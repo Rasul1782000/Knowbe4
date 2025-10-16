@@ -1,0 +1,78 @@
+
+<div class="calendar-container">
+  <!-- Sidebar -->
+  <aside class="navbar-wrapper">
+    <app-navbar></app-navbar>
+  </aside>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <section class="header-section">
+      <h2>Welcome, Rasul Ahmed Khan 😀</h2>
+      <div class="controls">
+        <app-header></app-header>
+      </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+      <div class="metric-card">
+        <span class="metric-label">Total Sales</span>
+        <span class="metric-value">$4,672.20 <span class="metric-change">+27%</span></span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Expenses Summary</span>
+        <span class="metric-value">204,765 <span class="metric-change">+32%</span></span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Invoices Summary</span>
+        <span class="metric-value">12,045 <span class="metric-change">+15%</span></span>
+      </div>
+    </section>
+
+    <!-- Calendar & Leaderboard -->
+    <section class="calendar-leaderboard-section">
+        <div class="chart-card">
+        <h3>Reach</h3>
+        <div id="regions_div" style="width: 100%; height: 200px;"></div>
+      </div>
+
+      <!-- Leaderboard -->
+      <div class="leaderboard-section">
+        <h3>Leaderboard</h3>
+        <div class="leaderboard-controls">
+          <span>View All</span> | <span>Team A</span>
+        </div>
+        <div class="leaderboard-list">
+          <div class="leaderboard-item"><span>#1</span><span>Alaska Young</span><span>99%</span></div>
+          <div class="leaderboard-item"><span>#2</span><span>Alex Shotay</span><span>90%</span></div>
+          <div class="leaderboard-item"><span>#3</span><span>Mina Lee</span><span>87%</span></div>
+          <div class="leaderboard-item"><span>#4</span><span>Mesut Ozil</span><span>86%</span></div>
+          <div class="leaderboard-item"><span>#5</span><span>Kai Havertz</span><span>49%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+      <div class="chart-card">
+        <h3>Performance Overview</h3>
+        <app-Verticalcharts></app-Verticalcharts>
+      </div>
+      <div class="chart-card">
+        <h3>Upload Summary</h3>
+        <app-upload></app-upload>
+      </div>
+    </section>
+
+    <!-- Line Chart -->
+    <section class="linechart-section">
+      <h3>Weekly Progress</h3>
+      <app-linechart></app-linechart>
+    </section>
+  </main>
+</div>
+
+<div id="regions_div" style="width: 100%; height: 200px;"></div>

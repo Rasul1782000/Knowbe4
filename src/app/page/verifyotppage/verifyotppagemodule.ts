@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
-import { VerifyOTpage } from './verifyotppage';
+// import { VerifyOTpage } from './verifyotppage';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,4 +17,4 @@ import { AgCharts } from "ag-charts-angular";
     imports: [CommonModule, FormsModule,MeterGroup, CardModule, TableModule, ButtonModule, HttpClientModule, ComponentsModule, AgCharts],
     exports: [],
 })
-export class dashboardModule { }
+export class VerifyOTpageModule { }

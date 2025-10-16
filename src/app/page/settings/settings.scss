@@ -1,0 +1,55 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.sidebar {
+  background-color: #0c0000;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background:#101010 ;
+  overflow-y: auto;
+  transform: translateZ(0);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:170px;
+  background: linear-gradient(90deg, black);
+  padding: 10px;
+  top: 0;
+  z-index: 10;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+
+  .sidebar:hover {
+    width: 100px;
+  }
+
+  .header {
+    height: 80px;
+    font-size: 0.9rem;
+  }
+}
+
+
+.main-content > {
+  min-height: 0;
+  box-sizing: border-box;
+}

@@ -1,58 +1,109 @@
-:host ::ng-deep {
-  .dark-table {
-    background-color: #1a1a1a;
-    color: #fff;
+.table-container {
+  border-radius: 12px;
+  background: #fff;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  overflow: visible; /* Make sure paginator is not hidden */
+}
 
-    .p-datatable-thead > tr > th {
-      background-color: #111;
-      color: #fff;
-      border-bottom: 1px solid #333;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.8rem;
-    }
 
-    .p-datatable-tbody > tr > td {
-      border-bottom: 1px solid #333;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.75rem;
-    }
+/* ---------- Search Box ---------- */
+.table-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
 
-    .p-datatable-tbody > tr:hover {
-      background-color: #222 !important;
-    }
+  .search-box {
+    width: 220px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 14px;
 
-    .p-tag {
-      font-size: 0.7rem;
-      padding: 0.15rem 0.3rem;
-    }
-
-    .p-button.p-button-sm {
-      padding: 0.2rem 0.4rem;
-      font-size: 0.75rem;
-      border-color: #555;
-      color: #f0f0f0;
-    }
-
-    .p-inputtext-sm {
-      background-color: #222;
-      border: 1px solid #555;
-      color: #fff;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.8rem;
-    }
-
-    .dark-progress {
-      height: 0.4rem;
-      background-color: #333;
-    }
-
-    .dark-progress .p-progressbar-value {
-      background-color: #607d8b;
-    }
-
-    img {
-      border-radius: 50%;
-      object-fit: cover;
+    &:focus {
+      border-color: #1976d2;
+      box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
     }
   }
+}
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+
+  th,
+  td {
+    padding: 14px 20px;
+    text-align: left;
+  }
+
+  th {
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  tr {
+    transition: background 0.3s ease, transform 0.2s ease;
+
+    &:nth-child(even) {
+      background: #f7f9fc;
+    }
+
+    &:hover {
+      background: #e3f2fd;
+      transform: scale(1.01);
+    }
+  }
+
+  td {
+    font-size: 14px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}
+
+/* ---------- Paginator ---------- */
+.mat-paginator {
+  background: #fafafa;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+
+  .mat-paginator-range-label,
+  .mat-paginator-page-size-label {
+    color: #555;
+  }
+
+  .mat-paginator-navigation-previous,
+  .mat-paginator-navigation-next,
+  .mat-paginator-navigation-first,
+  .mat-paginator-navigation-last {
+    color: #1976d2;
+
+    &:hover {
+      background: rgba(25, 118, 210, 0.1);
+      border-radius: 50%;
+    }
+  }
+  .table-wrapper {
+  margin: 20px;
+
+  .table-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1976d2;
+    margin-bottom: 12px;
+  }
+}
+
 }

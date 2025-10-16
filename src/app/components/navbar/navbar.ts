@@ -33,15 +33,15 @@ export class NavbarComponent {
       expanded: true,
       items: [
         { label: 'Dashboard', icon: 'pi pi-home', route: '/home' },
-        { label: 'Billing and Payment', icon: 'pi pi-dollar', route: '/payment' },
+        { label: 'View', icon: 'pi pi-dollar', route: '/View' },
         {
           label: 'Reports',
-          icon: 'pi pi-chart-line',
-          expanded: false,
-          subItems: [
-            { label: 'View', icon: 'pi pi-table', route: '/reports/view' },
-            { label: 'Search', icon: 'pi pi-search', route: '/reports/search' }
-          ]
+          icon: 'pi pi-chart-line',route: '/reports'
+          // expanded: false,
+          // subItems: [
+          //   { label: 'View', icon: 'pi pi-table', route: '/reports/view' },
+          //   { label: 'Search', icon: 'pi pi-search', route: '/reports/search' }
+          // ]
         },
         { label: 'Team', icon: 'pi pi-users', route: '/teams' },
         { label: 'Messages', icon: 'pi pi-comments', badge: '3', route: '/messages' },

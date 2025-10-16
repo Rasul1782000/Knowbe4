@@ -1,6 +1,8 @@
+import { HighchartsChartComponent } from 'highcharts-angular';
+import { TabsModule } from 'primeng/tabs';
 import { AgCharts} from 'ag-charts-angular';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlipSwitchComponent } from './flip-switch/flip-switch';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -44,7 +46,6 @@ import { TableModule } from 'primeng/table';
 import {AccordionModule} from 'primeng/accordion';
 import '@angular/compiler';
 import { SliderModule } from 'primeng/slider';
-
 import { SelectModule } from 'primeng/select';
 import { TagModule } from 'primeng/tag';
 import { MultiSelectModule } from 'primeng/multiselect';
@@ -62,7 +63,6 @@ import { ButtonComponent  } from './button/button';
 import { AccordionComponent } from './accordion/accordion';
 import { YesornobuttonComponent } from './yesornobutton/yesornobutton';
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
-import { ReactiveFormsModule} from '@angular/forms';
 import { MessageModule } from 'primeng/message';
 import { Tag } from 'primeng/tag';
 import { DataView } from 'primeng/dataview';
@@ -74,15 +74,48 @@ import { MeterGroup } from 'primeng/metergroup';
 import { DatatableComponent } from './datatable/datatable';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { OtppageComponent } from './otppage/otppage';
-import { Customerpaymenttable } from './customerpaymenttable/customerpaymenttable';
+import { CustomerpaymenttableComponent } from './customerpaymenttable/customerpaymenttable';
 import { ProgressBar } from 'primeng/progressbar';
-
+import { Tooltip } from 'primeng/tooltip';
+import { MatTableModule } from '@angular/material/table';
+import { SearchComponent } from './search/search';
+import { RevenuegraphComponent } from './revenuegraph/revenuegraph';
+import { PiechartComponent } from './piechart/piechart';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs';
+import { Menubar } from 'primeng/menubar';
+import { Basicinfo } from '../page/basicinfo/basicinfo';
+import { Billing } from '../page/billing/billing';
+import { Mode } from '../page/mode/mode';
+import { Membership } from '../page/membership/membership';
+import { Avatar } from 'primeng/avatar';
+import { InputText } from 'primeng/inputtext';
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CreditcardComponent } from './creditcard/creditcard';
+import { SplitterModule } from 'primeng/splitter';
+import { SplitterComponent } from './splitter/splitter';
+import { Balancechart } from './balancechart/balancechart';
+import { AreachartComponent } from './areachart/areachart';
+import { FormsModule as AngularFormsModule } from '@angular/forms';
+import {TextareaModule} from 'primeng/textarea';
+import { BrowserModule } from '@angular/platform-browser';
+import { ReactivesubmitformComponent } from './reactivesubmitform/reactivesubmitform';
+import { Submitbutton } from './submitbutton/submitbutton';
+import {  CurrentplanComponent } from './currentplan/currentplan';
+import { GeomapsComponent } from './geomaps/geomaps';
+import { Treechart } from './treechart/treechart';
 
 @NgModule({
   declarations:
     [
       // FlipSwitchComponent,
       CalendarComponent,
+      Basicinfo,
+      Billing,
+      Mode,
+      Membership,
       NavbarComponent,
       VerticalchartsComponent,
       DockComponent,
@@ -105,79 +138,116 @@ import { ProgressBar } from 'primeng/progressbar';
       MetergroupComponent,
       DatatableComponent,
       OtppageComponent,
-      Customerpaymenttable
+      CustomerpaymenttableComponent,
+      SearchComponent,
+      RevenuegraphComponent,
+      PiechartComponent,
+      BreadcrumbsComponent,
+      CreditcardComponent,
+      SplitterComponent,
+      Balancechart,
+      AreachartComponent,
+      ReactivesubmitformComponent,
+      Submitbutton,
+      CurrentplanComponent,
+      GeomapsComponent,
+      Treechart,
     ],
 
-  imports:
-    [
-      ButtonModule,
-      BadgeModule,
-      ProgressBar,
-      MeterGroup,
-      AccordionModule,
-      ToastModule,
-      TableModule,
-      AgCharts,
-      Tag,
-      SliderModule,
-      InputOtpModule,
-      ReactiveFormsModule,
-      InputOtpModule,
-      MessageModule,
-      DataView,
-      HttpClientModule,
-      CommonModule,
-      SharedModule,
-      CardModule,
-      InputTextModule,
-      AgChartsModule,
-      TagModule,
-      // AgChartsAngularModule,
-      SelectModule,
-      MultiSelectModule,
-      FileUploadModule,
-      ButtonModule,
-      ConfirmPopupModule,
-      IconFieldModule,
-      InputIconModule,
-      OrganizationChartModule,
-      FormsModule,
-      MatCardModule,
-      MatDatepickerModule,
-      MatNativeDateModule,
-      DrawerModule,
-      RouterModule,
-      TerminalModule,
-      DockModule,
-      MenubarModule,
-      ToastModule,
-      DialogModule,
-      TreeModule,
-      GalleriaModule,
-      FormsModule,
-      TooltipModule,
-      Ripple,
-      ChartModule,
-      AvatarModule,
-      StyleClass,
-      CommonModule,
-      HttpClientModule,
-      ColorPickerModule,
-      SplitButton,
-      InputTextModule,
-      IconField,
-      Toolbar,
-      InputIcon,
-      InputIcon,
-      Timeline,
-      ButtonModule,
-    ],
+
+
+
+  imports: [
+    ButtonModule,
+    MatInputModule,
+    BadgeModule,
+    ProgressBar,FormsModule,
+    MatFormFieldModule,
+    MeterGroup,
+    TabsModule,
+    MatButtonModule,
+    TooltipModule,
+    MatTableModule,
+    MatPaginatorModule,
+    AccordionModule,
+    ToastModule,
+    TableModule,
+    TextareaModule,
+     MessageModule,
+    ToastModule,
+    AgCharts,
+    InputText,
+    Tag,
+    Avatar,
+    SliderModule,
+    Menubar,
+    Tooltip,
+    InputOtpModule,
+    ReactiveFormsModule,
+    InputOtpModule,
+    MessageModule,
+    DataView,
+    HttpClientModule,
+    CommonModule,
+    SharedModule,
+    CardModule,
+    InputTextModule,
+    AgChartsModule,
+    TagModule,
+    // AgChartsAngularModule,
+    SelectModule,
+    MultiSelectModule,
+    FileUploadModule,
+    ButtonModule,
+    ConfirmPopupModule,
+    IconFieldModule,
+    InputIconModule,
+    OrganizationChartModule,
+    FormsModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    DrawerModule,
+    RouterModule,
+    TerminalModule,
+    DockModule,
+    ChartModule,
+    MenubarModule,
+    ToastModule,
+    DialogModule,
+    TreeModule,
+    SplitterModule,
+    GalleriaModule,
+    FormsModule,
+    TooltipModule,
+    Ripple,
+    ChartModule,
+    AvatarModule,
+    StyleClass,
+    CommonModule,
+    HttpClientModule,
+    ColorPickerModule,
+    SplitButton,
+    InputTextModule,
+    IconField,
+    Toolbar,
+    InputIcon,
+    InputIcon,
+    Timeline,
+    ButtonModule,
+    BrowserModule,
+],
+
+
+
 
   exports:[
       // FlipSwitchComponent,
       CalendarComponent,
       NavbarComponent,
-       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,FunnelchartComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,Customerpaymenttable
+       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,FunnelchartComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,CustomerpaymenttableComponent,SearchComponent,RevenuegraphComponent,PiechartComponent,BreadcrumbsComponent,Basicinfo,Billing,Mode,Membership,CreditcardComponent,SplitterComponent,AreachartComponent,ReactivesubmitformComponent,CurrentplanComponent,GeomapsComponent
     ],
 })
+
+
 export class ComponentsModule { }

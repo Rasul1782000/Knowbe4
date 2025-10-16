@@ -1,0 +1,161 @@
+/* Wrapper to position card down-center */
+.flipcard-wrapper {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: flex-start;   /* allow padding to push down */
+  height: 100vh;             /* full viewport height */
+  padding-top: 100px;        /* move card down */
+  box-sizing: border-box;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background-color: transparent;
+  width: 240px;
+  height: 154px;
+  perspective: 1000px;
+  color: white;
+}
+
+/* Inner Flip Animation */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #171717;
+  box-shadow: 0 8px 14px rgba(0,0,0,0.2);
+}
+
+/* Back side rotated */
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Internal Elements */
+.heading_8264 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.7em;
+  letter-spacing: 0.1em;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+}
+
+.chip {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 30px;
+  height: 30px;
+}
+
+.contactless {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  width: 20px;
+  height: 20px;
+}
+
+.number {
+  position: absolute;
+  top: 80px;
+  left: 15px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.valid_thru {
+  position: absolute;
+  top: 110px;
+  left: 150px;
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+.date_8264 {
+  position: absolute;
+  top: 130px;
+  left: 150px;
+  font-weight: bold;
+  font-size: 0.6em;
+}
+
+.name {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-weight: bold;
+  font-size: 0.6em;
+}
+
+/* Back Strips */
+.strip {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #303030,
+    #303030 10px,
+    #202020 10px,
+    #202020 20px
+  );
+}
+
+.mstrip {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  width: 80px;
+  height: 8px;
+  border-radius: 2.5px;
+  background-color: #fff;
+}
+
+.sstrip {
+  position: absolute;
+  top: 60px;
+  right: 15px;
+  width: 40px;
+  height: 8px;
+  border-radius: 2.5px;
+  background-color: #fff;
+}
+
+.code {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  color: black;
+  line-height: 8px;
+}

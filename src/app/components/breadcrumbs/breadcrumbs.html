@@ -1,0 +1,22 @@
+<div class="card">
+  <p-tabs [value]="activeTab">
+    <p-tablist>
+      <p-tab
+        *ngFor="let tab of tabs"
+        [value]="tab.route"
+        (click)="selectingTab(tab.route)"
+        class="flex items-center !gap-2 text-inherit"
+      >
+        <i [class]="tab.icon"></i>
+        <span>{{ tab.label }}</span>
+      </p-tab>
+    </p-tablist>
+  </p-tabs>
+</div>
+
+<div class="tab-content mt-3">
+  <app-basicinfo *ngIf="activeTab === 'basicinfo'"></app-basicinfo>
+  <app-billing *ngIf="activeTab === 'billing'"></app-billing>
+  <app-mode *ngIf="activeTab === 'mode'"></app-mode>
+  <app-membership *ngIf="activeTab === 'membership'"></app-membership>
+</div>

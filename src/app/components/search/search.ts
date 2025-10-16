@@ -6,6 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './search.html',
   styleUrl: './search.scss'
 })
-export class SearchComponent {
 
+export class SearchComponent {
+ tooltipOptions = {
+        showDelay: 150,
+        autoHide: false,
+        tooltipEvent: 'hover',
+        tooltipPosition: 'left'
+    } as const;
 }
+
+
+

@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Reports } from './page/reports/reports';
-import { Payment } from './page/payment/payment';
+import { Viewpage } from './page/View/View';
 import { Reportsview } from './page/reportsview/reportsview';
 import { Reportssearch } from './page/reportssearch/reportssearch';
 import { Projects } from './page/projects/projects';
@@ -22,8 +22,10 @@ import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { VerifyOTpage } from './page/verifyotppage/verifyotppage';
 
+
+
 @NgModule({
-  declarations: [App, Reports, Payment, Reportsview, Reportssearch, Projects, Services, Teams, VerifyOTpage,
+  declarations: [App, Reports, Viewpage, Reportsview, Reportssearch, Projects, Services, Teams, VerifyOTpage,
   ],
   imports: [
     BrowserModule,
