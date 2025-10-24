@@ -58,7 +58,6 @@ import { Timeline } from 'primeng/timeline';
 import { Statusfilter } from './statusfilter/statusfilter';
 import { HeaderComponent } from './header/header';
 import { SharedModule } from 'primeng/api';
-import { FunnelchartComponent } from './funnelchart/funnelchart';
 import { ButtonComponent  } from './button/button';
 import { AccordionComponent } from './accordion/accordion';
 import { YesornobuttonComponent } from './yesornobutton/yesornobutton';
@@ -106,6 +105,9 @@ import { Submitbutton } from './submitbutton/submitbutton';
 import {  CurrentplanComponent } from './currentplan/currentplan';
 import { GeomapsComponent } from './geomaps/geomaps';
 import { Treechart } from './treechart/treechart';
+import { Carouselcardcomponent } from './carouselcard/carouselcard';
+import { Footer2forservicesComponents } from './footer2forservices/footer2forservices';
+import { RatingstarComponent } from './ratingstar/ratingstar';
 
 @NgModule({
   declarations:
@@ -128,7 +130,6 @@ import { Treechart } from './treechart/treechart';
       UploadComponent,
       Statusfilter,
       HeaderComponent,
-      FunnelchartComponent,
       FlipSwitchComponent,
       ButtonComponent,
       AccordionComponent,
@@ -152,6 +153,9 @@ import { Treechart } from './treechart/treechart';
       CurrentplanComponent,
       GeomapsComponent,
       Treechart,
+      Carouselcardcomponent,
+      Footer2forservicesComponents,
+      RatingstarComponent,
     ],
 
 
@@ -245,7 +249,8 @@ import { Treechart } from './treechart/treechart';
       // FlipSwitchComponent,
       CalendarComponent,
       NavbarComponent,
-       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,FunnelchartComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,CustomerpaymenttableComponent,SearchComponent,RevenuegraphComponent,PiechartComponent,BreadcrumbsComponent,Basicinfo,Billing,Mode,Membership,CreditcardComponent,SplitterComponent,AreachartComponent,ReactivesubmitformComponent,CurrentplanComponent,GeomapsComponent
+       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,CustomerpaymenttableComponent,SearchComponent,RevenuegraphComponent,PiechartComponent,BreadcrumbsComponent,Basicinfo,Billing,Mode,Membership,CreditcardComponent,SplitterComponent,AreachartComponent,ReactivesubmitformComponent,CurrentplanComponent,GeomapsComponent,Carouselcardcomponent,
+       Footer2forservicesComponents,RatingstarComponent
     ],
 })
 

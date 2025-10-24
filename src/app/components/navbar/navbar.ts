@@ -37,11 +37,6 @@ export class NavbarComponent {
         {
           label: 'Reports',
           icon: 'pi pi-chart-line',route: '/reports'
-          // expanded: false,
-          // subItems: [
-          //   { label: 'View', icon: 'pi pi-table', route: '/reports/view' },
-          //   { label: 'Search', icon: 'pi pi-search', route: '/reports/search' }
-          // ]
         },
         { label: 'Team', icon: 'pi pi-users', route: '/teams' },
         { label: 'Messages', icon: 'pi pi-comments', badge: '3', route: '/messages' },
@@ -62,9 +57,9 @@ export class NavbarComponent {
       title: 'Tools',
       expanded:false,
       items: [
-        { label: 'Email', icon: 'pi pi-email', route: '/crm-app/src/app/page/tools/email'},
-        {label: 'Automation', icon: 'pi pi-', route: '/crm-app/src/app/page/tools/automation'},
-        {label: 'Integration', icon: 'pi pi-settings', route: '/crm-app/src/app/page/tools/integration'},
+        { label: 'Email', icon: 'pi pi-email', route: '/tools/email'},
+        { label: 'Automation', icon: 'pi pi-automation', route: '/tools/automation'},
+        { label: 'Integration', icon: 'pi pi-settings', route: 'tools/integration'},
       ]
 
     }

@@ -1,6 +1,54 @@
+<!-- ============================= -->
+<!-- Navbar -->
+<!-- ============================= -->
+<header class="navbar-wrapper">
+  <app-navbar></app-navbar>
+</header>
 
-<app-navbar></app-navbar>
-<!-- <app-employeeviewtable-component></app-employeeviewtable-component> -->
-<app-customerreview></app-customerreview>
+<!-- ============================= -->
+<!-- Hero / Intro Section -->
+<!-- ============================= -->
+<section class="hero-section">
+  <div class="hero-content">
+    <h1 class="hero-title">Our Services</h1>
+    <p class="hero-subtitle">
+      We provide premium solutions designed to help your business grow and
+      succeed in the digital era.
+    </p>
+  <app-ratingstar></app-ratingstar>
+  </div>
+</section>
 
-<app-footer></app-footer>
+<!-- ============================= -->
+<!-- Customer Reviews Section -->
+<!-- ============================= -->
+<section class="review-section">
+  <div class="section-header">
+    <h2>What Our Customers Say</h2>
+    <p>Real stories from satisfied clients who trust our expertise.</p>
+  </div>
+  <div class="section-body">
+    <app-customerreview></app-customerreview>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Carousel / Featured Highlights -->
+<!-- ============================= -->
+<section class="carousel-section">
+  <div class="section-header">
+    <h2>Featured Highlights</h2>
+    <p>Explore our top projects and success stories.</p>
+  </div>
+  <div class="section-body">
+    <app-carouselcardcomponent></app-carouselcardcomponent>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- Footer -->
+<!-- ============================= -->
+<footer class="footer-wrapper">
+  <app-footer2forservices></app-footer2forservices>
+  <app-footer></app-footer>
+</footer>

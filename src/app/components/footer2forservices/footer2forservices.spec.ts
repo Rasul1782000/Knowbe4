@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FunnelchartComponent } from './funnelchart';
+import { Footer2forservices } from './footer2forservices';
 
-describe('Funnelchart', () => {
-  let component: FunnelchartComponent;
-  let fixture: ComponentFixture<FunnelchartComponent>;
+describe('Footer2forservices', () => {
+  let component: Footer2forservices;
+  let fixture: ComponentFixture<Footer2forservices>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [FunnelchartComponent]
+      declarations: [Footer2forservices]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FunnelchartComponent);
+    fixture = TestBed.createComponent(Footer2forservices);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

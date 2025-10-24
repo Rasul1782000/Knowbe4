@@ -1,0 +1,95 @@
+/* ============================= */
+/* Footer Base Styles */
+/* ============================= */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #1f2937; /* neutral-800 */
+  color: #e5e7eb; /* neutral-200 */
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: 'Inter', sans-serif;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 180px;
+
+    h6.footer-title {
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      color: #f3f4f6;
+      border-bottom: 2px solid #3b82f6;
+      display: inline-block;
+      padding-bottom: 0.25rem;
+    }
+
+    .link {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+
+      &:hover {
+        color: #60a5fa; /* blue-400 */
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+/* ============================= */
+/* Horizontal Layout (for larger screens) */
+/* ============================= */
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    text-align: left;
+    padding: 3rem 4rem;
+
+    nav {
+      align-items: flex-start;
+    }
+  }
+}
+
+/* ============================= */
+/* Vertical Layout (for smaller screens) */
+/* ============================= */
+@media (max-width: 767px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    nav {
+      align-items: center;
+    }
+  }
+}
+
+/* ============================= */
+/* Dark Mode Support */
+/* ============================= */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background-color: #111827; /* darker neutral */
+    color: #e5e7eb;
+
+    nav h6.footer-title {
+      color: #f9fafb;
+      border-color: #2563eb;
+    }
+
+    .link:hover {
+      color: #3b82f6;
+    }
+  }
+}

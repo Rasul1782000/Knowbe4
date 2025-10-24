@@ -1,0 +1,15 @@
+<div class="carousel w-full relative overflow-hidden rounded-xl shadow-lg">
+  <div
+    *ngFor="let slide of slides; let i = index"
+    class="carousel-item w-full"
+    [class.hidden]="i !== currentSlide"
+  >
+    <img [src]="slide" class="w-full object-cover h-[500px] rounded-xl" />
+
+    <div
+      class="absolute inset-0 flex items-center justify-between px-5"
+      style="top: 50%; transform: translateY(-50%)"
+    >
+    </div>
+  </div>
+</div>

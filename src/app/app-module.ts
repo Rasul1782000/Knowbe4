@@ -10,7 +10,7 @@ import Aura from '@primeng/themes/aura';
 import { AppRoutingModule } from './app-routing-module';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { Reports } from './page/reports/reports';
+import { Reportspage } from './page/reports/reports';
 import { Viewpage } from './page/View/View';
 import { Reportsview } from './page/reportsview/reportsview';
 import { Reportssearch } from './page/reportssearch/reportssearch';
@@ -18,14 +18,14 @@ import { Projects } from './page/projects/projects';
 import { Services } from './page/services/services';
 import { Teams } from './page/teams/teams';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
-import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { VerifyOTpage } from './page/verifyotppage/verifyotppage';
+import { EmailPage } from './page/email/email';
+import { AutomationPage } from './page/automation/automation';
 
 
 
 @NgModule({
-  declarations: [App, Reports, Viewpage, Reportsview, Reportssearch, Projects, Services, Teams, VerifyOTpage,
+  declarations: [App, Reportspage, Viewpage, Reportsview, Reportssearch, Projects, Services, Teams, VerifyOTpage, EmailPage, AutomationPage,
   ],
   imports: [
     BrowserModule,
@@ -34,9 +34,7 @@ import { VerifyOTpage } from './page/verifyotppage/verifyotppage';
     ComponentsModule,
     RouterModule.forRoot([]),
     NgbModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
-    NbLayoutModule,
-    NbEvaIconsModule,
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

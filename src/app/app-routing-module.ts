@@ -9,7 +9,7 @@ import { Dashboard } from './page/Dashboard/dashboard';
 import { Calendar } from './page/Calendar/Calendar';
 import { Messages } from './page/messages/messages';
 import { Settings } from './page/settings/settings';
-import { Reports } from './page/reports/reports';
+import { Reportspage } from './page/reports/reports';
 import { Viewpage } from './page/View/View';
 import { Teams } from './page/teams/teams';
 import { Reportsview } from './page/reportsview/reportsview';
@@ -21,6 +21,8 @@ import { Basicinfo } from './page/basicinfo/basicinfo';
 import { Billing } from './page/billing/billing';
 import { Mode } from './page/mode/mode';
 import { Membership } from './page/membership/membership';
+import { EmailPage } from './page/email/email';
+import { AutomationPage } from './page/automation/automation';
 
 // import { Automation } from './page/Tools/automation/automation';
 // import { Email } from './page/Tools/email/email';
@@ -39,11 +41,15 @@ const routes: Routes = [
   { path: 'settings', component: Settings },
   { path: 'teams', component: Teams },
   { path: 'View', component: Viewpage },
-  { path: 'reports', component: Reports },
+  { path: 'reports', component: Reportspage },
   { path: 'reports/view', component: Reportsview },
   { path: 'reports/search', component: ReportsSearch },
   { path: 'application/projects', component: Projects },
   { path: 'application/services', component: Services },
+  { path: 'tools/email', component:EmailPage},
+  {path: 'tools/automation', component:AutomationPage},
+  // {path: 'tools/automation', component:automation}
+
   {path: 'settings',
     component: Settings,
     children: [
