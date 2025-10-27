@@ -51,6 +51,7 @@ import { TagModule } from 'primeng/tag';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { DividerModule } from 'primeng/divider';
 import { UploadComponent } from './upload/upload';
 import { AgChartsModule } from 'ag-charts-angular';
 import { BadgeModule } from 'primeng/badge';
@@ -83,10 +84,6 @@ import { PiechartComponent } from './piechart/piechart';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs';
 import { Menubar } from 'primeng/menubar';
-import { Basicinfo } from '../page/basicinfo/basicinfo';
-import { Billing } from '../page/billing/billing';
-import { Mode } from '../page/mode/mode';
-import { Membership } from '../page/membership/membership';
 import { Avatar } from 'primeng/avatar';
 import { InputText } from 'primeng/inputtext';
 import { MatButtonModule } from '@angular/material/button';
@@ -98,26 +95,27 @@ import { SplitterComponent } from './splitter/splitter';
 import { Balancechart } from './balancechart/balancechart';
 import { AreachartComponent } from './areachart/areachart';
 import { FormsModule as AngularFormsModule } from '@angular/forms';
-import {TextareaModule} from 'primeng/textarea';
+import { TextareaModule} from 'primeng/textarea';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactivesubmitformComponent } from './reactivesubmitform/reactivesubmitform';
 import { Submitbutton } from './submitbutton/submitbutton';
-import {  CurrentplanComponent } from './currentplan/currentplan';
-import { GeomapsComponent } from './geomaps/geomaps';
+import { CurrentplanComponent } from './currentplan/currentplan';
 import { Treechart } from './treechart/treechart';
 import { Carouselcardcomponent } from './carouselcard/carouselcard';
-import { Footer2forservicesComponents } from './footer2forservices/footer2forservices';
+import { Footer2forservicesComponent } from './footer2forservices/footer2forservices';
 import { RatingstarComponent } from './ratingstar/ratingstar';
+import { DividerwithwordsComponent } from './dividerwithwords/dividerwithwords';
+import { BasicinfoPage } from '../page/basicinfo/basicinfo';
+import {  StatswithimagesComponent } from './statswithimages/statswithimages';
+import {  TimelinebydaisyComponent } from './timelinebydaisy/timelinebydaisy';
+
 
 @NgModule({
   declarations:
     [
       // FlipSwitchComponent,
       CalendarComponent,
-      Basicinfo,
-      Billing,
-      Mode,
-      Membership,
+      BasicinfoPage,
       NavbarComponent,
       VerticalchartsComponent,
       DockComponent,
@@ -151,11 +149,14 @@ import { RatingstarComponent } from './ratingstar/ratingstar';
       ReactivesubmitformComponent,
       Submitbutton,
       CurrentplanComponent,
-      GeomapsComponent,
+      // GeomapsComponent,
       Treechart,
       Carouselcardcomponent,
-      Footer2forservicesComponents,
+      Footer2forservicesComponent,
       RatingstarComponent,
+      DividerwithwordsComponent,
+      StatswithimagesComponent,
+      TimelinebydaisyComponent,
     ],
 
 
@@ -240,17 +241,18 @@ import { RatingstarComponent } from './ratingstar/ratingstar';
     Timeline,
     ButtonModule,
     BrowserModule,
+    DividerModule,
 ],
 
 
 
 
   exports:[
-      // FlipSwitchComponent,
-      CalendarComponent,
-      NavbarComponent,
-       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,CustomerpaymenttableComponent,SearchComponent,RevenuegraphComponent,PiechartComponent,BreadcrumbsComponent,Basicinfo,Billing,Mode,Membership,CreditcardComponent,SplitterComponent,AreachartComponent,ReactivesubmitformComponent,CurrentplanComponent,GeomapsComponent,Carouselcardcomponent,
-       Footer2forservicesComponents,RatingstarComponent
+       CalendarComponent,
+       NavbarComponent,
+       VerticalchartsComponent, DockComponent, CustomersComponent, ColorpickerComponent, LinechartComponent, ChatComponent, OrganizationchartComponent, AdvancedfiltertableComponent, UploadComponent,HeaderComponent, FlipSwitchComponent,ButtonComponent,AccordionComponent,YesornobuttonComponent,FooterComponent,CustomerreviewComponent,MetergroupComponent,DatatableComponent,OtppageComponent,CustomerpaymenttableComponent,SearchComponent,RevenuegraphComponent,PiechartComponent,BreadcrumbsComponent,CreditcardComponent,SplitterComponent,AreachartComponent,ReactivesubmitformComponent,CurrentplanComponent,Carouselcardcomponent,
+       Footer2forservicesComponent,RatingstarComponent,DividerwithwordsComponent,
+       StatswithimagesComponent,TimelinebydaisyComponent
     ],
 })
 

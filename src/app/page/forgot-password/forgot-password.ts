@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrl: './forgot-password.scss',
   standalone: false,
 })
-export class ForgotPassword {
+export class ForgotPasswordPage {
   email: string = '';
   constructor(private router: Router) { }
 

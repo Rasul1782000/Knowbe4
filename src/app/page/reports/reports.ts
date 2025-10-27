@@ -10,7 +10,7 @@ import { DesignerService } from '../../service/services/designer.service';
   styleUrls: ['./reports.scss'],
 
 })
-export class Reportspage implements OnInit {
+export class ReportsPage implements OnInit {
   data: any;
   options: any;
 

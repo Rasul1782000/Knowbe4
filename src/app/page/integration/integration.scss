@@ -1,0 +1,147 @@
+/* =========================================================
+   Global & Layout Styles
+   ========================================================= */
+
+/* Use a full-page container to set the primary dark background */
+.page-container {
+  min-height: 100vh;
+  background: #121212; /* Very dark gray base */
+  color: #fdfdfd; /* Off-white text for contrast */
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* Allows content to push footer down */
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px; /* Horizontal padding for main content area */
+  width: 100%;
+  max-width: 1400px; /* Constrain content width */
+  margin: 0 auto; /* Center the content */
+}
+
+/* Base section padding */
+section {
+  padding: 60px 0;
+}
+
+/* Styling for content cards (Reviews, Carousel) based on metric/chart cards */
+.content-card {
+  background: #1f1f1f; /* Darker card background */
+  border-radius: 12px;
+  padding: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+  border: 1px solid #2c2c2c; /* Subtle light border */
+  transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* =========================================================
+   Typography & Section Headers
+   ========================================================= */
+
+h1, h2, h3 {
+  color: #e0e0e0; /* Slightly lighter headings */
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: #a0a0a0; /* Subdued color for paragraphs/subtitles */
+  line-height: 1.6;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: #7d7d7d;
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   Navbar & Footer
+   ========================================================= */
+
+.navbar-wrapper {
+  background: #000; /* Pure black for a distinct header */
+  padding: 15px 40px;
+  border-bottom: 1px solid #222;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  /* Use a full-width container for the navbar/header */
+  width: 100%;
+}
+
+.footer-wrapper {
+  background: #000;
+  padding: 40px 40px 20px 40px;
+  border-top: 1px solid #222;
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+
+.hero-section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  /* Premium blue glow for the main title */
+  color: #58a6ff;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: #b0b0b0;
+}
+
+/* =========================================================
+   Responsive Design
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  .content-card {
+    padding: 25px;
+  }
+
+  .navbar-wrapper,
+  .footer-wrapper {
+    padding: 10px 20px;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

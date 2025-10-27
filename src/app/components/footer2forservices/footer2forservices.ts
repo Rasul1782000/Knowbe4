@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './footer2forservices.html',
   styleUrl: './footer2forservices.scss',
 })
-export class Footer2forservicesComponents {
+export class Footer2forservicesComponent {
 
 }

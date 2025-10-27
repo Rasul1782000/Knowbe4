@@ -7,15 +7,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 
 import { StyleClassModule } from 'primeng/styleclass';
-import { Login } from './Login';
+import {  LoginPage } from './Login';
 
 const routes: Routes = [
-  { path: '', component: Login }
+  { path: '', component: LoginPage }
 ];
 
 @NgModule({
   declarations: [
-    Login
+    LoginPage
   ],
   imports: [
     CommonModule,

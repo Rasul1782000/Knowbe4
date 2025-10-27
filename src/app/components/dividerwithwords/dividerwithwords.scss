@@ -1,0 +1,51 @@
+// Define variables for easy theming
+$card-bg-color: #1f1f1f; // Dark background, similar to the reference
+$text-color: #e0e0e0; // Light text
+$divider-color: #333; // Subtle divider color
+$border-radius: 8px;
+$padding-large: 24px;
+$shadow-color: rgba(0, 0, 0, 0.4);
+
+.card {
+  // Card container styling
+  background-color: $card-bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  padding: $padding-large;
+  box-shadow: 0 4px 8px $shadow-color;
+  max-width: 600px; // Optional: helps maintain readability for long content
+  margin: 20px auto; // Center the card on the page
+
+  // Typography for paragraphs inside the card
+  p {
+    line-height: 1.6;
+    margin-bottom: 20px; // Spacing after the paragraph before the divider (if present)
+    font-size: 1rem;
+
+    &:last-child {
+      margin-bottom: 0; // Remove margin for the last paragraph
+    }
+  }
+
+  // Divider component (assuming 'p-divider' is a custom or component library tag)
+  // We style the equivalent of a horizontal rule or a thin border for separation.
+  p-divider {
+    display: block; // Ensure it takes up full width
+    height: 1px;
+    background-color: $divider-color;
+    margin: 20px 0; // Vertical spacing around the divider
+    border: none;
+    // Optional: Add a subtle gradient or shadow to make it look less harsh
+    // box-shadow: 0 0 5px rgba($divider-color, 0.5);
+  }
+
+  // Alternative styling if p-divider is a class or a simple hr tag:
+  /*
+  .divider-class-name, hr {
+    border: none;
+    height: 1px;
+    background-color: $divider-color;
+    margin: 20px 0;
+  }
+  */
+}

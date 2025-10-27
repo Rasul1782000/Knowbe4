@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './basicinfo.html',
   styleUrl: './basicinfo.scss'
 })
-export class Basicinfo {
+export class BasicinfoPage {
 
 }

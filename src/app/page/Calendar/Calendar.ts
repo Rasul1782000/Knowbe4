@@ -10,7 +10,7 @@ import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'; // 
   templateUrl: './Calendar.html',
   styleUrls: ['./Calendar.scss']
 })
-export class Calendar {
+export class CalendarPage {
   title = 'button-app';
   calendarOptions: CalendarOptions = {
     initialView: 'dayGridMonth',

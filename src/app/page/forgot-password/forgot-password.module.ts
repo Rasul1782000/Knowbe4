@@ -5,15 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { StyleClassModule } from 'primeng/styleclass';
-import { ForgotPassword } from './forgot-password';
+import { ForgotPasswordPage } from './forgot-password';
 
 const routes: Routes = [
-  { path: '', component: ForgotPassword }
+  { path: '', component: ForgotPasswordPage }
 ];
 
 @NgModule({
   declarations: [
-    ForgotPassword
+    ForgotPasswordPage
   ],
   imports: [
     CommonModule,

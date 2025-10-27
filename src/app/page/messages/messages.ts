@@ -9,7 +9,7 @@ import { Customer } from '../../models/customer';
   templateUrl: './messages.html',
   styleUrl: './messages.scss'
 })
-export class Messages {
+export class MessagesPage {
   customers!: Customer[];
   first = 0;
   rows = 10;

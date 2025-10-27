@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Dashboard } from './dashboard';
+import { DashboardPage } from './dashboard';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,8 +11,8 @@ import { AgCharts } from "ag-charts-angular";
 
 
 @NgModule({
-    declarations: [Dashboard],
+    declarations: [],
     imports: [CommonModule, MeterGroup, CardModule, TableModule, ButtonModule, HttpClientModule, ComponentsModule, AgCharts],
-    exports: [Dashboard],
+    exports: [],
 })
 export class dashboardModule { }

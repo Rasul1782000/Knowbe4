@@ -8,7 +8,7 @@ import {Component} from '@angular/core';
   styleUrl: './billing.scss',
 
 })
-export class Billing {
+export class BillingPage {
 
 }
 

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./Login.scss'],
   standalone:false,
 })
-export class Login {
+export class LoginPage {
   email = '';
   password = '';
 

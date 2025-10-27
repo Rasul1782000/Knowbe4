@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.scss',
 
 })
-export class Dashboard {
+export class DashboardPage {
   value = [
     { label: 'Apps', color1: '#34d399', color2: '#fbbf24', value: 25, icon: 'pi pi-table' },
     { label: 'Messages', color1: '#fbbf24', color2: '#60a5fa', value: 15, icon: 'pi pi-inbox' },

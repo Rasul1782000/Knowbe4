@@ -1,0 +1,126 @@
+/* =========================================================
+   Dark Themed Stats Section (CRM Dashboard Style)
+   ========================================================= */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 12px;
+  background: rgba(20, 20, 20, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6), inset 0 0 8px rgba(255, 255, 255, 0.05);
+  color: #fdfdfd;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.stats:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7), inset 0 0 12px rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Individual Stat Card ---------- */
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(88, 166, 255, 0.3);
+}
+
+/* ---------- Stat Icon ---------- */
+.stat-figure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(88, 166, 255, 0.08);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.stat:hover .stat-figure {
+  background: rgba(88, 166, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* ---------- Title, Value & Description ---------- */
+.stat-title {
+  font-size: 0.85rem;
+  color: #a0a0a0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fdfdfd;
+  text-shadow: 0 0 6px rgba(88, 166, 255, 0.4);
+}
+
+.stat-desc {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+  margin-top: 8px;
+}
+
+/* ---------- Text Color Variants ---------- */
+.text-primary {
+  color: #58a6ff !important;
+}
+.text-secondary {
+  color: #2ecc71 !important;
+}
+
+/* ---------- Avatar Styling ---------- */
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-online .w-16 {
+  border: 2px solid #2ecc71;
+  box-shadow: 0 0 10px rgba(46, 204, 113, 0.4);
+}
+
+.avatar-online img {
+  border-radius: 50%;
+}
+
+/* ---------- Responsive Layout ---------- */
+@media (max-width: 1024px) {
+  .stats {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .stat {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .stat {
+    width: 100%;
+  }
+}

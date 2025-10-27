@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { Settings } from './settings';
+import { SettingsPage } from './settings';
 import { ComponentsModule } from '../../components/components-module';
 import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
 
@@ -12,7 +12,7 @@ import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
 
 
 @NgModule({
-    declarations: [Settings],
+    declarations: [SettingsPage],
     imports: [
         CommonModule, FormsModule, HttpClientModule, ComponentsModule
     ],

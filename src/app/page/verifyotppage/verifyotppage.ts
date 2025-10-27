@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./verifyotppage.scss'],
   standalone: false
 })
-export class VerifyOTpage implements OnInit {
+export class VerifyOTPage implements OnInit {
 
   otp = '';
   email = '';

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './mode.html',
   styleUrl: './mode.scss'
 })
-export class Mode {
+export class ModePage {
 
 }

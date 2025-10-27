@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Messages } from './messages';
+import { MessagesPage } from './messages';
 import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
@@ -9,8 +9,8 @@ import { ComponentsModule } from '../../components/components-module';
 
 
 @NgModule({
-    declarations: [Messages],
+    declarations: [MessagesPage],
     imports: [CommonModule, FormsModule, TableModule, ButtonModule, HttpClientModule, ComponentsModule],
-    exports: [Messages]
+    exports: [MessagesPage]
 })
 export class MessagesComponentModule { }

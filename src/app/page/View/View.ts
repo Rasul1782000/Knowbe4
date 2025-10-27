@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './View.html',
   styleUrl: './View.scss'
 })
-export class Viewpage {
+export class ViewPage {
 
 }
