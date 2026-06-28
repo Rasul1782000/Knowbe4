@@ -1,0 +1,89 @@
+.layout {
+  display: flex;
+  height: 100vh;
+  background: var(--bg-app);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* ─── Sidebar ─── */
+.sidebar {
+  width: var(--sidebar-width, 80px);
+  background: var(--bg-sidebar);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-lg) 0;
+  border-right: 1px solid var(--border-color);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.sidebar app-navbar {
+  width: 100%;
+}
+
+/* ─── Main Area ─── */
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ─── Top Header Bar ─── */
+.top-bar {
+  height: var(--header-height, 64px);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.top-bar app-header {
+  width: 100%;
+}
+
+/* ─── Content Area ─── */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-lg);
+  background: var(--bg-app);
+}
+
+.content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: var(--radius-full);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: var(--space-sm) 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    height: auto;
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .content {
+    padding: var(--space-md);
+  }
+}

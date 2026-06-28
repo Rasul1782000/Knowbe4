@@ -1,0 +1,19 @@
+.reports-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-header {
+  margin-bottom: var(--space-xl);
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+}
+
+.chart-container {
+  max-width: 900px;
+}

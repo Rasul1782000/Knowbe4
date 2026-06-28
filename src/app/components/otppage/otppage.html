@@ -1,23 +1,34 @@
-<div id="form-ui">
-  <form id="form">
+<div class="auth-card">
+  <div class="auth-header">
+    <h1 class="auth-brand">Know be-4</h1>
+    <p class="auth-subtitle">OTP Verification</p>
+    <p class="auth-description">Enter the code sent to your email.</p>
+  </div>
 
-
-    <div id="form-body">
-      <div id="welcome-lines">
-        <div id="welcome-line-1">OTP Verification</div>
-        <div id="welcome-line-2">Please enter the code we have sent you.</div>
-      </div>
-
-      <div class="inputs" id="input-area">
-        <input placeholder="" type="tel" maxlength="1">
-        <input placeholder="" type="tel" maxlength="1">
-        <input placeholder="" type="tel" maxlength="1">
-        <input placeholder="" type="tel" maxlength="1">
-      </div>
-
-      <a id="submit-button" href="#">Verify</a>
-
-      <p class="resend">You don't receive the code? <a class="resend-action" href="#">Resend</a></p>
+  <form [formGroup]="otpForm" (ngSubmit)="VerifyOtp()" class="auth-form">
+    <div class="input-group">
+      <input pInputText type="email" placeholder="Email Address" formControlName="email" required>
     </div>
+
+    <div class="otp-inputs">
+      <input
+        *ngFor="let _ of [1,2,3,4]; let i = index"
+        type="tel"
+        maxlength="1"
+        class="otp-box"
+        (input)="onOtpInput($event, i)"
+        (keydown)="onOtpKeydown($event, i)"
+        [attr.data-index]="i"
+        autocomplete="one-time-code"
+      />
+    </div>
+
+    <button type="submit" class="auth-submit-btn" [disabled]="!otpForm.valid">Verify OTP</button>
   </form>
+
+  <div class="auth-links">
+    <button type="button" class="resend-btn" (click)="SendOtp()">Resend Code</button>
+    <span class="auth-links-sep">|</span>
+    <a routerLink="/login">Back to Login</a>
+  </div>
 </div>

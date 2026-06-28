@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-membership',
   standalone: false,
   templateUrl: './membership.html',
-  styleUrl: './membership.scss'
+  styleUrl: './membershipstyles.scss'
 })
 export class MembershipPage {
 

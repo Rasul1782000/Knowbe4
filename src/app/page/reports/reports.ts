@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, effect, inject, PLATFORM_ID } from '@angular/core';
+﻿import { Component, OnInit, ChangeDetectorRef, effect, inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { AppConfigService } from '../../service/services/appconfig.service';
 import { DesignerService } from '../../service/services/designer.service';
@@ -7,7 +7,7 @@ import { DesignerService } from '../../service/services/designer.service';
   selector: 'app-reports',
   standalone: false,
   templateUrl: './reports.html',
-  styleUrls: ['./reports.scss'],
+  styleUrl: './reportstyles.scss',
 
 })
 export class ReportsPage implements OnInit {

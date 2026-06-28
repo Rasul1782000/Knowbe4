@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-services',
   standalone: false,
   templateUrl: './services.html',
-  styleUrl: './services.scss'
+  styleUrl: './servicesstyles.scss'
 })
 export class ServicesPage {
 

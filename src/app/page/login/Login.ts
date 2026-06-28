@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './Login.html',
-  styleUrls: ['./Login.scss'],
+  styleUrl: './loginstyles.scss',
   standalone:false,
 })
 export class LoginPage {

@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-integration',
   standalone: false,
   templateUrl: './integration.html',
-  styleUrl: './integration.scss',
+  styleUrl: './integrationstyles.scss',
 })
 export class IntegrationPage {
 

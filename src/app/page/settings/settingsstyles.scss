@@ -1,0 +1,16 @@
+.settings-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.settings-content {
+  min-height: 400px;
+}

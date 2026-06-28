@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-basicinfo',
   standalone: false,
   templateUrl: './basicinfo.html',
-  styleUrl: './basicinfo.scss'
+  styleUrl: './basicinfostyles.scss'
 })
 export class BasicinfoPage {
 

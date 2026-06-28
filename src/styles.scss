@@ -1,19 +1,161 @@
 @use '@angular/material' as mat;
 @use "tailwindcss";
 @plugin "daisyui";
-// @use '@nebular/theme/styles/theming' as *;
-// @use '@nebular/theme/styles/themes/dark' as dark;
 
-/* Global styles */
+/* ─── Design Token Variables ─── */
+:root {
+  /* Background colors */
+  --bg-app: #0d0d0d;
+  --bg-secondary: #1a1a1a;
+  --bg-card: #1f1f1f;
+  --bg-surface: #252525;
+  --bg-sidebar: #000;
+  --bg-input: #2a2a2a;
+  --bg-hover: #2c2c2c;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+
+  /* Text colors */
+  --text-primary: #f0f0f0;
+  --text-secondary: #a0a0a0;
+  --text-muted: #666;
+  --text-inverse: #0d0d0d;
+
+  /* Border colors */
+  --border-color: #333;
+  --border-light: #2a2a2a;
+
+  /* Accent colors */
+  --accent-primary: #00FF7F;
+  --accent-secondary: #58a6ff;
+  --accent-success: #2ecc71;
+  --accent-warning: #f4a261;
+  --accent-danger: #e74c3c;
+
+  /* Border radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-elevated: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 255, 127, 0.15);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --transition-slow: 0.4s ease;
+
+  /* Typography */
+  --font-primary: 'Arial', sans-serif;
+  --font-heading: 'Arial', sans-serif;
+  --font-mono: 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+
+  /* Layout */
+  --sidebar-width: 80px;
+  --sidebar-expanded-width: 240px;
+  --header-height: 64px;
+}
+
+/* ─── Global Styles ─── */
 html,
 body {
   height: 100%;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  color-scheme: light;
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
+  font-family: var(--font-primary);
+  color-scheme: dark;
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-// /* Importing Bootstrap SCSS file. */
-// @import 'bootstrap/scss/bootstrap';
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bg-hover) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--bg-hover);
+  border-radius: var(--radius-full);
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ─── Placeholder Page ─── */
+.placeholder-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  color: var(--text-secondary);
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+}
+
+/* ─── Shared Component Classes ─── */
+.card-base {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card-base:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card-accent {
+  border-left: 4px solid var(--accent-secondary);
+}
+
+/* ─── App-wide overrides for consistency ─── */
+.p-drawer {
+  background: var(--bg-sidebar) !important;
+  border-right: 1px solid var(--border-color);
+}
+
+.p-toolbar {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.p-inputtext {
+  background: var(--bg-input) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+}
+
+/* ─── Central Page Style Manifest ─── */
+@use './app/styles.scss';

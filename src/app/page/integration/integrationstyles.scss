@@ -1,0 +1,77 @@
+.integration-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+section {
+  padding: 60px 0;
+}
+
+/* ─── Section Header ─── */
+.section-header {
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+  }
+}
+
+.review-section,
+.carousel-section {
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── Hero Section ─── */
+.hero-section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  color: var(--accent-secondary);
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.4);
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  color: var(--text-secondary);
+}
+
+/* ─── Footer ─── */
+.page-footer {
+  background: var(--bg-sidebar);
+  padding: 40px 0 20px;
+  border-top: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-2xl);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}

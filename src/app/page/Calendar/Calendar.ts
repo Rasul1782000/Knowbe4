@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/core'; // useful for typechecking
 import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin
 import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'; // a plugin
@@ -8,7 +8,7 @@ import interactionPlugin, { DateClickArg } from '@fullcalendar/interaction'; // 
   selector: 'app-Calendar',
   standalone: false,
   templateUrl: './Calendar.html',
-  styleUrls: ['./Calendar.scss']
+  styleUrl: './calendarstyles.scss'
 })
 export class CalendarPage {
   title = 'button-app';

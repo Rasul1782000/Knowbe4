@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-email',
   standalone: false,
   templateUrl: './email.html',
-  styleUrl: './email.scss',
+  styleUrl: './emailstyles.scss',
 })
 export class EmailPage {
 

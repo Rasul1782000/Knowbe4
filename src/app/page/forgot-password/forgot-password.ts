@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
   templateUrl:'./forgot-password.html',
-  styleUrl: './forgot-password.scss',
+  styleUrl: './forgotpasswordstyles.scss',
   standalone: false,
 })
 export class ForgotPasswordPage {

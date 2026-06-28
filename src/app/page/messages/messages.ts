@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CustomerService } from '../../service/services/customerservice';
 import { Customer } from '../../models/customer';
 
@@ -7,7 +7,7 @@ import { Customer } from '../../models/customer';
   standalone: false,
   providers: [CustomerService],
   templateUrl: './messages.html',
-  styleUrl: './messages.scss'
+  styleUrl: './messagestyles.scss'
 })
 export class MessagesPage {
   customers!: Customer[];

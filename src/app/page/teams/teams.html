@@ -1,30 +1,19 @@
-<div class="teams-container">
+<div class="teams-page">
+  <!-- Page Header -->
+  <header class="page-header">
+    <h2>Meet Our Team</h2>
+    <div class="subtitle">
+      <app-yesornobutton></app-yesornobutton>
+    </div>
+  </header>
 
-
-  <!-- Sidebar -->
-  <aside class="navbar-wrapper" role="navigation" aria-label="Main navigation">
-    <app-navbar></app-navbar>
-  </aside>
-
-  <!-- Main Content -->
-  <main class="main-content" role="main">
-    <!-- Header -->
-    <header class="header-section">
-      <h2>Meet Our Team</h2>
-      <div class="subtitle">
-        <app-yesornobutton></app-yesornobutton>
-      </div>
-
-    </header>
-
-    <!-- Content -->
-    <section class="teams-leaderboard-section" role="region" aria-label="Team organizational chart">
-      <div class="chart-wrapper">
-        <app-organizationalchart></app-organizationalchart>
-      </div>
-      <div class="accordion-wrapper">
-        <app-accordion></app-accordion>
-      </div>
-    </section>
-  </main>
+  <!-- Content -->
+  <section class="teams-content">
+    <div class="chart-wrapper card-base">
+      <app-organizationalchart></app-organizationalchart>
+    </div>
+    <div class="accordion-wrapper card-base">
+      <app-accordion></app-accordion>
+    </div>
+  </section>
 </div>

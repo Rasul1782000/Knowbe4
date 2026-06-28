@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-view',
   standalone: false,
   templateUrl: './View.html',
-  styleUrl: './View.scss'
+  styleUrl: './viewstyles.scss'
 })
 export class ViewPage {
 

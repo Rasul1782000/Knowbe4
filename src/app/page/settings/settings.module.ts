@@ -1,21 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { SettingsPage } from './settings';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { ComponentsModule } from '../../components/components-module';
-import { BreadcrumbsComponent } from '../../components/breadcrumbs/breadcrumbs';
-
-
-
-
-
+import { SettingsPage } from './settings';
+import { BasicinfoPage } from '../basicinfo/basicinfo';
+import { BillingPage } from '../billing/billing';
+import { ModePage } from '../mode/mode';
+import { MembershipPage } from '../membership/membership';
 
 @NgModule({
-    declarations: [SettingsPage],
-    imports: [
-        CommonModule, FormsModule, HttpClientModule, ComponentsModule
-    ],
-    exports: [BreadcrumbsComponent]
+  declarations: [
+    SettingsPage,
+    BasicinfoPage,
+    BillingPage,
+    ModePage,
+    MembershipPage,
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ComponentsModule,
+  ],
 })
-export class SettingsModule { }
+export class SettingsModule {}

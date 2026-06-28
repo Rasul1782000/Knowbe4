@@ -1,0 +1,134 @@
+.services-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ─── Section Header ─── */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.section-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ─── Hero Section ─── */
+.hero-section {
+  background: var(--bg-sidebar);
+  color: var(--text-primary);
+  padding: 6rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-2xl);
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+}
+
+/* ─── Review Section ─── */
+.review-section {
+  background: var(--bg-card);
+  padding: 5rem 1rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ─── Carousel Section ─── */
+.carousel-section {
+  padding: 5rem 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* ─── Footer ─── */
+.footer-wrapper {
+  background: var(--bg-sidebar);
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  border-top: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-2xl);
+
+  a {
+    color: var(--text-primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ─── Smooth Section Animation ─── */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 4rem 1rem;
+  }
+
+  .review-section,
+  .carousel-section {
+    padding: 3rem 1rem;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}

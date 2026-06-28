@@ -1,5 +1,6 @@
-import { NgModule, ViewChild } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './components/layout/layout';
 import { LoginPage } from './page/login/Login';
 import { ForgotPasswordPage } from './page/forgot-password/forgot-password';
 import { SignupPage } from './page/signup/signup';
@@ -23,31 +24,40 @@ import { IntegrationPage } from './page/integration/integration';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  /* ─── Auth routes (no layout) ─── */
   { path: 'login', component: LoginPage },
   { path: 'forgot-password', component: ForgotPasswordPage },
   { path: 'signup', component: SignupPage },
   { path: 'login/otpage', component: VerifyOTPage },
-  { path: 'home', component: DashboardPage },
-  { path: 'messages', component: MessagesPage},
-  { path: 'calendar', component: CalendarPage},
-  { path: 'settings', component: SettingsPage},
-  { path: 'teams', component: TeamsPage },
-  { path: 'View', component: ViewPage },
-  { path: 'reports', component: ReportsPage },
-  { path: 'application/projects', component: ProjectsPage },
-  { path: 'application/services', component: ServicesPage },
-  { path: 'tools/email', component:EmailPage},
-  {path: 'tools/automation', component:AutomationPage},
-  {path: 'tools/integration',component:IntegrationPage},
 
-  {path: 'settings',
-    component: SettingsPage,
+  /* ─── Main routes (with app layout) ─── */
+  {
+    path: '',
+    component: LayoutComponent,
     children: [
-      { path: 'basicinfo', component: BasicinfoPage},
-      { path: 'billing', component: BillingPage},
-      { path: 'mode', component: ModePage},
-      { path: 'membership', component: MembershipPage },
-      { path: '', redirectTo: 'basicinfo', pathMatch: 'full' }
+      { path: 'home', component: DashboardPage },
+      { path: 'messages', component: MessagesPage },
+      { path: 'calendar', component: CalendarPage },
+      { path: 'teams', component: TeamsPage },
+      { path: 'View', component: ViewPage },
+      { path: 'reports', component: ReportsPage },
+      { path: 'application/projects', component: ProjectsPage },
+      { path: 'application/services', component: ServicesPage },
+      { path: 'tools/email', component: EmailPage },
+      { path: 'tools/automation', component: AutomationPage },
+      { path: 'tools/integration', component: IntegrationPage },
+      {
+        path: 'settings',
+        component: SettingsPage,
+        children: [
+          { path: 'basicinfo', component: BasicinfoPage },
+          { path: 'billing', component: BillingPage },
+          { path: 'mode', component: ModePage },
+          { path: 'membership', component: MembershipPage },
+          { path: '', redirectTo: 'basicinfo', pathMatch: 'full' }
+        ]
+      }
     ]
   }
 ];

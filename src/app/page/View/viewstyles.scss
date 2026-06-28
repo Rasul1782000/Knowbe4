@@ -1,0 +1,132 @@
+.view-page {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ─── Page Header ─── */
+.page-header {
+  margin-bottom: var(--space-xl);
+
+  h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+}
+
+/* ─── Dashboard Widgets + Leaderboard ─── */
+.dashboard-widgets-leaderboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.dashboard-widgets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.widget {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+
+  app-metergroup,
+  app-revenuegraph,
+  app-piechart {
+    width: 100%;
+  }
+}
+
+/* ─── Leaderboard ─── */
+.leaderboard-section {
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    margin: 0 0 var(--space-md);
+  }
+}
+
+.leaderboard-controls {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  gap: var(--space-sm);
+
+  span {
+    cursor: pointer;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+
+    &.active,
+    &:hover {
+      color: var(--accent-secondary);
+      background: var(--bg-hover);
+    }
+  }
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--bg-hover);
+  font-size: 0.85rem;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+
+  &:hover {
+    background: var(--accent-secondary);
+    color: var(--text-inverse);
+    transform: translateX(4px);
+  }
+
+  .rank {
+    font-weight: 700;
+    color: var(--accent-secondary);
+  }
+
+  .score {
+    color: var(--accent-success);
+  }
+}
+
+/* ─── Table Section ─── */
+.table-section {
+  margin-bottom: var(--space-xl);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .dashboard-widgets-leaderboard {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-widgets {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-widgets {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header h2 {
+    font-size: 1.3rem;
+  }
+}

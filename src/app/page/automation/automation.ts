@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-automation',
   standalone: false,
   templateUrl: './automation.html',
-  styleUrl: './automation.scss',
+  styleUrl: './automationstyles.scss',
 })
 export class AutomationPage {
 

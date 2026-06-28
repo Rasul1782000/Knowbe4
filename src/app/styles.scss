@@ -1,0 +1,23 @@
+/* ─── Central Page Style Manifest ─── */
+/* Imports all page-specific SCSS files for build bundling */
+
+@use './page/Dashboard/homestyles.scss';
+@use './page/View/viewstyles.scss';
+@use './page/reports/reportstyles.scss';
+@use './page/teams/teamsstyles.scss';
+@use './page/messages/messagestyles.scss';
+@use './page/Calendar/calendarstyles.scss';
+@use './page/projects/projectsstyles.scss';
+@use './page/services/servicesstyles.scss';
+@use './page/email/emailstyles.scss';
+@use './page/automation/automationstyles.scss';
+@use './page/integration/integrationstyles.scss';
+@use './page/settings/settingsstyles.scss';
+@use './page/basicinfo/basicinfostyles.scss';
+@use './page/billing/billingstyles.scss';
+@use './page/mode/modestyles.scss';
+@use './page/membership/membershipstyles.scss';
+@use './page/login/loginstyles.scss';
+@use './page/signup/signupstyles.scss';
+@use './page/forgot-password/forgotpasswordstyles.scss';
+@use './page/verifyotppage/verifyotpstyles.scss';

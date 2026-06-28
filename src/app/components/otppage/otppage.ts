@@ -14,10 +14,10 @@ export class OtppageComponent {
 
   otpForm: FormGroup;
   formSubmitted = false;
-  rest:any;
+  rest: any;
   PasswordForm: FormGroup | any;
-  error:any;
-
+  error: any;
+  otpValues: string[] = ['', '', '', ''];
 
   constructor(
     private fb: FormBuilder,
@@ -28,6 +28,30 @@ export class OtppageComponent {
       email: ['', [Validators.required, Validators.email]],
       otp: ['', [Validators.required, Validators.minLength(4)]]
     });
+  }
+
+  onOtpInput(event: Event, index: number): void {
+    const input = event.target as HTMLInputElement;
+    if (input.value && index < 3) {
+      const next = input.closest('.otp-inputs')?.querySelectorAll('.otp-box')[index + 1] as HTMLInputElement;
+      next?.focus();
+    }
+    this.updateOtpValue();
+  }
+
+  onOtpKeydown(event: KeyboardEvent, index: number): void {
+    const input = event.target as HTMLInputElement;
+    if (event.key === 'Backspace' && !input.value && index > 0) {
+      const prev = input.closest('.otp-inputs')?.querySelectorAll('.otp-box')[index - 1] as HTMLInputElement;
+      prev?.focus();
+    }
+    this.updateOtpValue();
+  }
+
+  private updateOtpValue(): void {
+    const inputs = document.querySelectorAll('.otp-box');
+    this.otpValues = Array.from(inputs).map(el => (el as HTMLInputElement).value);
+    this.otpForm.patchValue({ otp: this.otpValues.join('') });
   }
 
   SendOtp() {
@@ -47,8 +71,7 @@ export class OtppageComponent {
     const Otp = this.otpForm.get('otp')?.value;
     this.OtpService.VerifyOtp(email, Otp).subscribe({
       next: rest => this.messageService.add({ severity: 'success', summary: 'OTP Verified', detail: rest.message }),
-      error: error=> this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message })
+      error: error => this.messageService.add({ severity: 'error', summary: 'Error', detail: error.error.message })
     });
   }
-
 }

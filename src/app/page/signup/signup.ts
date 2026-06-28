@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.html',
-  styleUrls: ['./signup.scss'],
+  styleUrl: './signupstyles.scss',
   standalone:false, // corrected
 })
 export class SignupPage {
